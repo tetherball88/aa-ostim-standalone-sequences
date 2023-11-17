@@ -1,0 +1,1 @@
+Scriptname AmorousAdvDLC1_6QstUtil extends Quest  Conditional
