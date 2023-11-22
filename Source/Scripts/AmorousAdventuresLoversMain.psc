@@ -1,4 +1,4 @@
-Scriptname AmorousAdventuresLoversMain extends Quest Conditional 
+Scriptname AmorousAdventuresLoversMain extends Quest Conditional
 
 Int Property LoversCount = 0 auto
 Int Property PotentialLoversCount = 0 auto
@@ -56,7 +56,6 @@ Function AddMyLover(actor aLover)
 	Else
 		;--| Debug.Trace("AddMyLover: " + aLover.GetLeveledActorBase().GetName() + " Not added. AmorAdvPlayersLoversCountFaction is " + iRank)
 	EndIf
-	
 EndFunction
 
 Function RemoveMyLover(actor aLover, bool HadSex)
@@ -82,7 +81,7 @@ Function RemoveMyLover(actor aLover, bool HadSex)
 			;--| Debug.Trace("RemoveMyLover: " + aLover.GetLeveledActorBase().GetName() + " Lover Rank is " + iLoversRank)
 			If (iLoversRank >= 5)
 				Int d25 = Utility.RandomInt(1,25)
-				If (d25 < iLoversRank )			
+				If (d25 < iLoversRank )
 					If (aLover.GetRelationshipRank(PlayerRef) < 3)
 						aLover.SetRelationshipRank(PlayerRef, 3)
 						aLover.AddToFaction(PotentialFollowersFaction)
@@ -93,7 +92,7 @@ Function RemoveMyLover(actor aLover, bool HadSex)
 			EndIf
 		EndIf
 	EndIf
-	
+
 	If (aLover == MyLover2.GetRef())
 		MyLover2.Clear()
 	EndIf
@@ -108,7 +107,6 @@ Function RemoveMyLover(actor aLover, bool HadSex)
 		EndIf
 	EndIf
 	aLover.EvaluatePackage()
-	
 EndFunction
 
 ;========[ LOVER Functions ]=====================
@@ -155,7 +153,7 @@ Function SetLoverEssential(actor aLover)
 				AmorousAdventuresLoverEssentialEndarie.Start()
 			EndIf
 		EndIf
-		
+
 	ElseIf(aLover == Farkas)
 		If(AmorousAdventuresLoverEssentialFarkas.IsRunning())
 			essentialChoice = AmorAdvSetEssentialFalse.Show()
@@ -311,10 +309,8 @@ Function SetLoverEssential(actor aLover)
 				AmorousAdventuresLoverEssentialAdelaisa.Start()
 			EndIf
 		EndIf
-		
-	Else	
+	Else
 		AmorAdvSetEssentialNoAction.Show()
-	
 	EndIf
 
 EndFunction
@@ -322,14 +318,14 @@ EndFunction
 ;========[ Animate Functions ]=====================
 Function AnimateMyLover(actor aLover, int sexType)
 
-    Debug.Trace("Amorous Adventures: AnimateMyLover: Type: " + sexType)
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorAdvLoveHappensMSG.Show()
-    EndIf
+	Debug.Trace("Amorous Adventures: AnimateMyLover: Type: " + sexType)
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorAdvLoveHappensMSG.Show()
+	EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-	Util.StartNomalScene(PlayerRef, aLover);LATER
+	Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -337,18 +333,17 @@ EndFunction
 
 Function AnimateMyFriends()
 
-    Debug.Trace("Amorous Adventures: AnimateMyLovers ")
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorAdvLoveHappensMSG.Show()
-    EndIf
+	Debug.Trace("Amorous Adventures: AnimateMyLovers ")
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorAdvLoveHappensMSG.Show()
+	EndIf
 
-    Actor aLover = MyLover1.GetRef() as actor
-    Actor bLover = MyLover2.GetRef() as actor	
+	Actor aLover = MyLover1.GetRef() as actor
+	Actor bLover = MyLover2.GetRef() as actor
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| Two NPC's knock boots
-    ;--| OSex doesn't handle a scene between two NPC's
+	;--| Two NPC's knock boots
 	Util.StartNomalScene(aLover, bLover)
 
 ;---| END ANIMATION CODE |------
@@ -360,40 +355,37 @@ EndFunction
 
 Function AnimateMyWalkUpFriends(actor aLover)
 
-    Debug.Trace("Amorous Adventures: AnimateMyLovers ")
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorAdvLoveHappensMSG.Show()
-    EndIf
+	Debug.Trace("Amorous Adventures: AnimateMyLovers ")
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorAdvLoveHappensMSG.Show()
+	EndIf
 
-    Actor bLover = MyLover1.GetRef() as actor
+	Actor bLover = MyLover1.GetRef() as actor
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| Two NPC's knock boots
-    ;--| OSex doesn't handle a scene between two NPC's
+	;--| Two NPC's knock boots
 	Util.StartNomalScene(aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 
-	RemoveMyLover(bLover, True)
 	RemoveMyLover(aLover, True)
 
 EndFunction
 
 Function AnimateThreesome()
 
-    Debug.Trace("Amorous Adventures: AnimateMyLover: threesome ")
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorAdvLoveHappensMSG.Show()
-    EndIf
+	Debug.Trace("Amorous Adventures: AnimateMyLover: threesome ")
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorAdvLoveHappensMSG.Show()
+	EndIf
 
-    Actor aLover = MyLover1.GetRef() as actor
-    Actor bLover = MyLover2.GetRef() as actor	
+	Actor aLover = MyLover1.GetRef() as actor
+	Actor bLover = MyLover2.GetRef() as actor
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| threesome with the player
-    ;--| OSex doesn't handle a Threesome
+	;--| threesome with the player
 	Util.StartThreesomeScene(PlayerRef, aLover, bLover)
 
 ;---| END ANIMATION CODE |------
@@ -405,17 +397,16 @@ EndFunction
 
 Function AnimateWalkUpThreesome(actor aLover)
 
-    Debug.Trace("Amorous Adventures: AnimateMyLover: threesome ")
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorAdvLoveHappensMSG.Show()
-    EndIf
+	Debug.Trace("Amorous Adventures: AnimateMyLover: threesome ")
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorAdvLoveHappensMSG.Show()
+	EndIf
 
-    Actor bLover = MyLover1.GetRef() as actor
+	Actor bLover = MyLover1.GetRef() as actor
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| threesome with the player
-    ;--| OSex doesn't handle a Threesome
+	;--| threesome with the player
 	Util.StartThreesomeScene(PlayerRef, aLover, bLover)
 
 ;---| END ANIMATION CODE |------
@@ -431,9 +422,16 @@ Function AnimateSoloLover(actor aLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| The NPC masturbates
-    ;--| OSex doesn't handle a Solo masturbation Scene of an NPC
-	Util.StartMasturbationScene(aLover)
+	;--| The NPC masturbates
+	;--| OpenSex doesn't handle a Solo masturbation Scene of an NPC
+	;--| So start a scene with both actors and have NPC masturbate
+	; Util.StartMasturbationScene(PlayerRef, aLover)
+
+	; OpenSex removed masturbation scenes for now
+    ; Restore masturbation scenes when they are added back
+    Util.StartNomalScene(PlayerRef, aLover)
+
+	RemoveMyLover(aLover, True)
 
 ;---| END ANIMATION CODE |------
 
@@ -441,14 +439,14 @@ EndFunction
 
 Function AnimateKissMyLover(actor aLover)
 
-    Debug.Trace("AnimateMyLover: Kiss ")
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorAdvLoveHappensMSG.Show()
-    EndIf
+	Debug.Trace("AnimateMyLover: Kiss ")
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorAdvLoveHappensMSG.Show()
+	EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| Just a kiss only...
+	;--| Just a kiss only...
 	Util.StartKissingScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------

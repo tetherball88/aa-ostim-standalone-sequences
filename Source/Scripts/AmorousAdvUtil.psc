@@ -30,134 +30,171 @@ EndFunction
 Function StartNomalScene(Actor dom, Actor sub)
 
     Utility.Wait(0.2)
-    If (IsOstimInstalled) 
-        StartOstimScene(dom, sub)
-    Else
-        StartFadeoutScene(sub)
-    EndIf
+
+    StartOstimScene(dom, sub)
 
 EndFunction
 
 Function StartOralScene(Actor dom, Actor sub)
 
-	String animationType = "BJ"
     Utility.Wait(0.2)
-    If (IsOstimInstalled) 
-        StartOstimScene(dom, sub, animationType)
+
+    OsexIntegrationMain ostim = OUtils.GetOStim()
+    ; if dom is female, start a vaginal oral scene
+    If (ostim.isFemale(dom))
+        StartOstimScene(dom, sub, animationStart="OpS|LyF!Sit|VJ|SittingCunnilingus")
+    ; if dom is male, start a blowjob oral scene
     Else
-        StartFadeoutScene(sub)
+        StartOstimScene(dom, sub, animationStart="OpS|Sta!Kne|BJ|HandOnHeadBlowjob")
     EndIf
 
 EndFunction
 
 Function StartOral69Scene(Actor dom, Actor sub)
 
-	String animationType = "VBJ"
     Utility.Wait(0.2)
-    If (IsOstimInstalled) 
-        StartOstimScene(dom, sub, animationType)
-    Else
-        StartFadeoutScene(sub)
-    EndIf
+
+    StartOralScene(dom, sub)
 
 EndFunction
 
 Function StartAnalScene(Actor dom, Actor sub)
 
-	String animationType = "An"
     Utility.Wait(0.2)
-    If (IsOstimInstalled) 
-        StartOstimScene(dom, sub, animationType)
-    Else
-        StartFadeoutScene(sub)
-    EndIf
+
+    StartMissionaryScene(dom, sub)
 
 EndFunction
 
 Function StartMissionaryScene(Actor dom, Actor sub)
 
-	String animationType = ""
-	String animationStart = ""
     Utility.Wait(0.2)
-    If (IsOstimInstalled) 
-        StartOstimScene(dom, sub, animationType, animationStart)
-    Else
-        StartFadeoutScene(sub)
-    EndIf
+
+    StartOstimScene(dom, sub)
 
 EndFunction
 
 Function StartDoggyScene(Actor dom, Actor sub)
 
-	String animationType = ""
-	String animationStart = ""
     Utility.Wait(0.2)
-    If (IsOstimInstalled) 
-        StartOstimScene(dom, sub, animationType, animationStart)
-    Else
-        StartFadeoutScene(sub)
-    EndIf
+
+    StartOstimScene(dom, sub)
 
 EndFunction
 
 Function StartCowgirlScene(Actor dom, Actor sub)
 
-	String animationType = ""
-	String animationStart = ""
     Utility.Wait(0.2)
-    If (IsOstimInstalled) 
-        StartOstimScene(dom, sub, animationType, animationStart)
-    Else
-        StartFadeoutScene(sub)
-    EndIf
+
+    StartOstimScene(dom, sub)
 
 EndFunction
 
+; This function is currently unused
 Function StartStandingScene(Actor dom, Actor sub)
 
-	String animationType = ""
-	String animationStart = ""
+    String animationClass = ""
+    String animationStart = ""
+
     Utility.Wait(0.2)
-    If (IsOstimInstalled) 
-        StartOstimScene(dom, sub, animationType, animationStart)
-    Else
-        StartFadeoutScene(sub)
-    EndIf
+
+    StartOstimScene(dom, sub, animationClass, animationStart)
 
 EndFunction
 
 Function StartThreesomeScene(Actor dom, Actor sub, Actor thr)
 
     Utility.Wait(0.2)
-    If (IsOstimInstalled) 
-        OsexIntegrationMain ostim = OUtils.GetOStim()
-        ostim.startScene(dom, sub, zThirdActor = thr)
-    Else
-        StartFadeoutScene(sub)
-    EndIf
-
-EndFunction
-
-Function StartMasturbationScene(Actor act)
-
-    ; String animationType = "Po"
-    Utility.Wait(0.2)
-    If (IsOstimInstalled) 
-        OsexIntegrationMain ostim = OUtils.GetOStim()
-        Ostim.Masturbate(act)
-    Else
-        StartFadeoutScene(act)
-    EndIf
-
-EndFunction
-
-Function StartOstimScene(Actor dom, Actor sub, String animationType = "", String animationStart = "")
 
     OsexIntegrationMain ostim = OUtils.GetOStim()
-    String startingAnim
-    If (animationType != "")
-        startingAnim = GetRandomAnimationByCondirions(animationClass = animationType)
-    ElseIf (animationStart != "")
+
+    ostim.startScene(dom, sub, zThirdActor = thr)
+
+EndFunction
+
+Function StartNPCScene(Actor npc1, Actor npc2)
+    Utility.Wait(0.2)
+
+    OsexIntegrationMain ostim = OUtils.GetOStim()
+
+    Int Time = 30 ; This is a looping times, not seconds.
+    ; Enable Undress
+    bool bAlwaysUndressAtAnimStart = ostim.AlwaysUndressAtAnimStart
+    ostim.AlwaysUndressAtAnimStart = True
+    ; Disable AI control
+    bool bUseAIControl = ostim.UseAIControl
+    ostim.UseAIControl = False
+    bool bUseAINPConNPC = ostim.UseAINPConNPC
+    ostim.UseAINPConNPC = False
+    bool bUseAINonAggressive = ostim.UseAINonAggressive
+    ostim.UseAINonAggressive = False
+
+    ; NPC love scene
+    ; all Amorous Adventures NPC scenes are between women
+    ostim.StartScene(npc1, npc2, zStartingAnimation = "OpS|LyF!Sit|VJ|AceSittingCunnilingus")
+    While (ostim.AnimationRunning())
+        If (Time == 0)
+            ostim.EndAnimation()
+            Utility.Wait(3.0)
+        Else
+            Utility.Wait(1.0)
+        EndIf
+        Time -= 1
+    EndWhile
+    ; Init
+    ostim.AlwaysUndressAtAnimStart = bAlwaysUndressAtAnimStart
+    ostim.UseAIControl = bUseAIControl
+    ostim.UseAINPConNPC = bUseAINPConNPC
+    ostim.UseAINonAggressive = bUseAINonAggressive
+EndFunction
+
+Function StartMasturbationScene(Actor player, Actor lover)
+
+    Utility.Wait(0.2)
+
+    OsexIntegrationMain ostim = OUtils.GetOStim()
+
+    Int Time = 30 ; This is a looping times, not seconds.
+    ostim.HideAllSkyUIWidgets()
+    ostim.DisableOSAControls = True
+    ; Disable AI control
+    bool bUseAIControl = ostim.UseAIControl
+    ostim.UseAIControl = False
+    bool bUseAINPConNPC = ostim.UseAINPConNPC
+    ostim.UseAINPConNPC = False
+    bool bUseAINonAggressive = ostim.UseAINonAggressive
+    ostim.UseAINonAggressive = False
+    ; Enable Undress
+    bool bAlwaysUndressAtAnimStart = ostim.AlwaysUndressAtAnimStart
+    ostim.AlwaysUndressAtAnimStart = True
+
+    ; Masturbation scene
+    ostim.StartScene(player, lover, zStartingAnimation ="OpS|Sit!Sit|Pf2|AceSittingMasturbationFemale")
+    While (ostim.AnimationRunning())
+        If (Time == 0)
+            ostim.EndAnimation()
+            Utility.Wait(3.0)
+        Else
+            Utility.Wait(1.0)
+        EndIf
+        Time -= 1
+    EndWhile
+    ; Init
+    ostim.ShowAllSkyUIWidgets()
+    ostim.DisableOSAControls = False
+    ostim.UseAIControl = bUseAIControl
+    ostim.UseAINPConNPC = bUseAINPConNPC
+    ostim.UseAINonAggressive = bUseAINonAggressive
+    ostim.AlwaysUndressAtAnimStart = bAlwaysUndressAtAnimStart
+
+EndFunction
+
+Function StartOstimScene(Actor dom, Actor sub, String animationClass = "", String animationStart = "", String animationHasInName = "")
+
+    OsexIntegrationMain ostim = OUtils.GetOStim()
+    String startingAnim = ""
+
+    If (animationStart != "")
         startingAnim = animationStart
     EndIf
 
@@ -169,7 +206,7 @@ Function StartOstimScene(Actor dom, Actor sub, String animationType = "", String
 EndFunction
 
 ; Start scene without sexual animation
-; TODO make text being passed from translation/radomizetion function. 
+; TODO make text being passed from translation/radomizetion function.
 Function StartFadeoutScene(Actor target, String type = "", String messageText = "")
 
     String targetName = target.GetDisplayName()
@@ -210,13 +247,8 @@ Function StartFadeoutScene(Actor target, String type = "", String messageText = 
 EndFunction
 
 ; Start kissing
-; With messageText being passed + no OStim, black scereen with message box pops up.
 Function StartKissingScene(Actor dom, Actor sub, String messageText = "")
-    If (IsOstimInstalled) 
-        StartOstimKissing(dom, sub)
-    Else
-        StartFadeoutScene(sub, "kiss", messageText)
-    EndIf
+    StartOstimKissing(dom, sub)
 EndFunction
 
 ; Start OStim kissing secene without undressing
@@ -224,22 +256,13 @@ EndFunction
 Function StartOstimKissing(Actor dom, Actor sub)
 
     OsexIntegrationMain ostim = OUtils.GetOStim()
-    String animation
 
-    ; Get kissing animations from OpenSex and other animation packages.
-    animation = GetRandomAnimationByCondirions(animationClass = "", positionKey = "S", tag = "Kiss", excludeKey = "job")
-
-    ; failsafe using OSex scene
-    If (animation == "")
-        animation = "0MF|Sy6!Sy9|Em|St9AdoreKm"
-    EndIf
+    ; Kiss scenes should only be a kiss and nothing else, so use the standard StandingKiss animation
+    String animation = "OpS|Sta!Sta|Ho|StandingKiss"
 
     Int Time = 10 ; This is a looping times, not seconds.
     ostim.HideAllSkyUIWidgets()
     ostim.DisableOSAControls = True
-    ; Disable Bed
-    bool bUseBed = ostim.UseBed
-    ostim.UseBed = False
     ; Disable AI control
     bool bUseAIControl = ostim.UseAIControl
     ostim.UseAIControl = False
@@ -250,15 +273,7 @@ Function StartOstimKissing(Actor dom, Actor sub)
     ; Disable Undress
     bool bAlwaysUndressAtAnimStart = ostim.AlwaysUndressAtAnimStart
     ostim.AlwaysUndressAtAnimStart = False
-    ; Force First Person
-    bool bUseFreeCam = ostim.UseFreeCam
-    ostim.UseFreeCam = False
-    bool bForceFirstPersonAfter = ostim.ForceFirstPersonAfter
-    ostim.ForceFirstPersonAfter = False    
-    If (PlayerRef.GetAnimationVariableInt("i1stPerson"))
-        Game.ForceThirdPerson()
-        Utility.Wait(0.20)
-    EndIf
+
     ; Kiss scence
     ostim.StartScene(dom, sub, zStartingAnimation = animation);KISS
     While (ostim.AnimationRunning())
@@ -273,9 +288,6 @@ Function StartOstimKissing(Actor dom, Actor sub)
     ; Init
     ostim.ShowAllSkyUIWidgets()
     ostim.DisableOSAControls = False
-    ostim.UseBed = bUseBed
-    ostim.UseFreeCam = bUseFreeCam
-    ostim.ForceFirstPersonAfter = bForceFirstPersonAfter
     ostim.UseAIControl = bUseAIControl
     ostim.UseAINPConNPC = bUseAINPConNPC
     ostim.UseAINonAggressive = bUseAINonAggressive
@@ -287,96 +299,20 @@ EndFunction
 Function StartWeddingScene(Actor dom, Actor sub, ObjectReference oBed)
 
     Utility.Wait(0.2)
-    If (IsOstimInstalled) 
-        StartOstimWedding(dom, sub, oBed)
-    Else
-        StartFadeoutScene(sub)
-    EndIf
+    StartOstimWedding(dom, sub, oBed)
 
 EndFunction
 
 Function StartOstimWedding(Actor dom, Actor sub, ObjectReference oBed)
 
     OsexIntegrationMain ostim = OUtils.GetOStim()
-    String animation = "0MF|MIy9!KNy6|Sx|KnCowGSxGL"
 
-    ; Use Bed
-    bool bUseBed = ostim.UseBed
-    ostim.UseBed = True
-    ; Disable Undress
-    bool bAlwaysUndressAtAnimStart = ostim.AlwaysUndressAtAnimStart
-    ostim.AlwaysUndressAtAnimStart = False
     ; Weding scence
-    ostim.StartScene(dom, sub, zUndressDom = True, zUndressSub = False, zStartingAnimation = animation, Bed = oBed);Cowgirl
-    Utility.Wait(1.0)
-    While (ostim.AnimationRunning())
-        Utility.Wait(3.0)
-    EndWhile
-    ; Init
-    ostim.UseBed = bUseBed
-    ostim.AlwaysUndressAtAnimStart = bAlwaysUndressAtAnimStart
+    ostim.StartScene(dom, sub, zUndressDom = True, zUndressSub = True, zStartingAnimation = "", Bed = oBed)
 EndFunction
-
-; Select Animation with scene type function, copied from ORomance 
-string function GetRandomAnimationByCondirions(String animationClass, String positionKey = "", String tag = "", String excludeKey = "")
-    OsexIntegrationMain ostim = OUtils.GetOStim()
-
-    ODatabaseScript ODatabase = ostim.GetODatabase()
-
-    Int animations = ODatabase.GetAnimationsWithActorCount(ODatabase.GetDatabaseOArray(), 2)
-    ; animations = ODatabase.GetHubAnimations(animations, False) ; exclude hub anim
-    animations = ODatabase.GetTransitoryAnimations(animations, False) ; exclude transition anim
-
-    ; Don't run class filtering if animationClass is empty.
-    If (animationClass != "")
-        animations = ODatabase.GetAnimationsWithAnimationClass(animations, animationClass)
-    EndIf
-
-    ; Don't run class filtering if positionKey is empty.
-    If (positionKey != "")
-        animations = ODatabase.GetAnimationsWithSpecificPositionData(animations, positionKey, 0, true)
-        animations = ODatabase.GetAnimationsWithSpecificPositionData(animations, positionKey, 1, true)
-    EndIf
-
-    Int i = 0
-    Int max =  ODatabase.getLengthOArray(animations)
-    Int ret = ODatabase.newOArray()
-    String animationName = ""
-    bool hasTagInName = false
-
-    while i < max
-
-        ; ; Get each elements from looping item
-        animationName = ODatabase.GetFullName(ODatabase.getObjectOArray(animations, i))
-
-        ; Exclude anim when excludeKey in included in animationName
-        If (StringUtil.Find(animationName, excludeKey) == -1)
-
-            ; Filtering with animation name
-            hasTagInName = StringUtil.Find(animationName, tag) != -1
-            If (hasTagInName)
-                ODatabase.appendObjectOArray(ret, ODatabase.getObjectOArray(animations, i))
-            Endif
-        EndIf
-
-        ; reset conditions
-        animationName = ""
-        hasTagInName = false
-        i += 1
-    EndWhile
-
-    ; Randomly choose animation from filtered array.
-    Int l = ODatabase.GetLengthOArray(ret)
-    Int random = ODatabase.GetObjectOArray(ret, ostim.randomint(0, l - 1))
-    string animationID = ODatabase.GetSceneID(random)
-
-    ODatabase.unload()
-
-    Return animationID
-endfunction
 
 Event OnInit()
 
     ; Check installed mods when this mod is loaded first time.
-    CheckInstalledMods()    
+    CheckInstalledMods()
 EndEvent

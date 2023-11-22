@@ -15,14 +15,14 @@ Function FeedingInitialize()
 	;debug.trace("AmorousAdvSeranaHungerTimer set to " + NextAllowed + " GameDaysPassed " + GameDaysPassed.GetValue())
 	AmorousAdvSeranaHungerTimer.SetValue(NextAllowed)
 
-EndFunction  
+EndFunction
 
 Function FeedingSerana()
 
 	float DaysUntilNextAllowed = 2.00  ;two days expressed in GameDaysPassed
 
 	int d8 = Utility.RandomInt(1,8)
-	If (d8 == 1 )	
+	If (d8 == 1 )
 		DaysUntilNextAllowed = 1.00
 	ElseIf (d8 == 2 )
 		DaysUntilNextAllowed = 1.00
@@ -46,7 +46,7 @@ Function FeedingSerana()
 	;debug.trace("AmorousAdvSeranaHungerTimer set to " + NextAllowed + " GameDaysPassed " + GameDaysPassed.GetValue())
 	AmorousAdvSeranaHungerTimer.SetValue(NextAllowed)
 
-EndFunction  
+EndFunction
 
 ;========[ Animation Functions ]=====================
 Function AnimateAmorousAdvLoveScene1 (actor aLover)
@@ -60,7 +60,6 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Should be a kissing scene only
-    ;--| Skip for OSex
     Util.StartKissingScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
@@ -78,7 +77,6 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Should be a kissing scene only
-    ;--| Skip for OSex
     Util.StartKissingScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
@@ -96,8 +94,13 @@ Function AnimateAmorousAdvLoveScene3 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Serana masturbates solo.  Player watches.
-    ;--| OSex doesn't handle an NPC solo masturbation scene
-    Util.StartMasturbationScene(aLover)
+    ;--| OStim/OpenSex doesn't handle an NPC solo masturbation scene
+    ;--| So start a scene with both actors and have Serana masturbate
+    ; Util.StartMasturbationScene(PlayerRef, aLover)
+
+    ; OpenSex removed masturbation scenes for now
+    ; Restore masturbation scenes when they are added back
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 

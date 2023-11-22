@@ -155,6 +155,17 @@ EndFunction
 Function Fragment_20()
 ;BEGIN CODE
 ;Stage 140
+Quest __temp = self as Quest
+AmorousAdvSteelQstUtil kmyQuest = __temp as AmorousAdvSteelQstUtil
+actor lydia = Alias_aAmorousAdvAlias1.GetReference() as Actor
+actor akLover = Alias_aAmorousAdvAlias2.GetReference() as Actor
+
+PlayerRef.Moveto(Marker)
+lydia.MoveTo(Marker)
+akLover.MoveTo(Marker)
+Utility.wait(3)
+kmyQuest.AnimateAmorousAdvLoveScene3(akLover, lydia)
+
 SetStage(200)
 ;END CODE
 EndFunction
@@ -249,4 +260,4 @@ Armor Property ArmorEbonyHelmet Auto
 Armor Property ArmorEbonyShield Auto
 MiscObject Property Gold001 Auto
 Actor Property PlayerRef Auto
-
+ObjectReference Property Marker  Auto

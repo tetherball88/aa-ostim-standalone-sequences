@@ -1,4 +1,4 @@
-Scriptname AmorousAdvSteelQstUtil extends Quest  
+Scriptname AmorousAdvSteelQstUtil extends Quest
 
 ;========[ Faction Functions ]=====================
 
@@ -18,8 +18,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| Should be Kissing with Lydia only. 
-    ;--| Skip for OSex.
+    ;--| Should be Kissing with Lydia only.
     Util.StartKissingScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
@@ -38,6 +37,20 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 
     ;--| player and Lydia make love
     Util.StartNomalScene(PlayerRef, aLover)
+
+;---| END ANIMATION CODE |------
+
+EndFunction
+
+Function AnimateAmorousAdvLoveScene3 (actor aLover, actor bLover)
+
+;---| BEGIN ANIMATION CODE |------
+    Debug.Trace("Amorous Adventures: AnimateMyLover: Adrianne and Lydia ")
+    ;--- No Fade
+    ;--- No Message
+
+    ;--| Adrianne and Lydia make love
+    Util.StartThreesomeScene(PlayerRef, aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 

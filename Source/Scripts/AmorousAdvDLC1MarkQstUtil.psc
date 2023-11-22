@@ -1,4 +1,4 @@
-Scriptname AmorousAdvDLC1MarkQstUtil extends Quest  
+Scriptname AmorousAdvDLC1MarkQstUtil extends Quest
 
 ;========[ Faction Functions ]=====================
 
@@ -9,16 +9,16 @@ EndFunction
 
 Function AnimateAmorousAdvLoveScene1 (actor aLover)
 
-    ;---| STORYBOARD DISPLAY --- FROM STAGE 60
-    Debug.Trace("Amorous Adventures: AnimateMyLover: Serana ")
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorousAdvStoryBoard1.Show()
-    EndIf
+	;---| STORYBOARD DISPLAY --- FROM STAGE 60
+	Debug.Trace("Amorous Adventures: AnimateMyLover: Serana ")
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorousAdvStoryBoard1.Show()
+	EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| Player and serana make love
-    Util.StartNomalScene(PlayerRef, aLover)
+	;--| Player and serana make love
+	Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -26,16 +26,16 @@ EndFunction
 
 Function AnimateAmorousAdvLoveScene2 (actor aLover)
 
-    ;---| STORYBOARD DISPLAY --- FROM STAGE 75 - Ansilvund 
-    Debug.Trace("Amorous Adventures: AnimateMyLover: Serana First Art ")
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorousAdvStoryBoard2.Show()
-    EndIf
+	;---| STORYBOARD DISPLAY --- FROM STAGE 75 - Ansilvund
+	Debug.Trace("Amorous Adventures: AnimateMyLover: Serana First Art ")
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorousAdvStoryBoard2.Show()
+	EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| Player and serana make love
-    Util.StartNomalScene(PlayerRef, aLover)
+	;--| Player and serana make love
+	Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -43,18 +43,17 @@ EndFunction
 
 Function AnimateAmorousAdvLoveScene3 (actor aLover, actor bLover)
 
-    ;---| STORYBOARD DISPLAY
-    Debug.Trace("AnimateMyLover: Ahlam and Serana Kiss ")
+	;---| STORYBOARD DISPLAY
+	Debug.Trace("AnimateMyLover: Ahlam and Serana Kiss ")
 
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorousAdvStoryBoard3.Show()
-    EndIf
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorousAdvStoryBoard3.Show()
+	EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| NPC's Serana and Ahlam kiss each other
-    ;--| OSex doesn't handle a scene between two NPC's kissing
-    Util.StartKissingScene(PlayerRef, aLover)
+	;--| NPC's Serana and Ahlam kiss each other
+	Util.StartKissingScene(aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -62,17 +61,17 @@ EndFunction
 
 Function AnimateAmorousAdvLoveScene4 (actor aLover)
 
-    ;---| STORYBOARD DISPLAY
-    Debug.Trace("AnimateMyLover: Ahlam Third Art ")
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorousAdvStoryBoard4.Show()
-    EndIf
+	;---| STORYBOARD DISPLAY
+	Debug.Trace("AnimateMyLover: Ahlam Third Art ")
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorousAdvStoryBoard4.Show()
+	EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| Player gives Ahlam anal
-    ;--| This should be an Anal only scene
-    Util.StartAnalScene(PlayerRef, aLover)
+	;--| Player gives Ahlam anal
+	;--| This should be an Anal only scene
+	Util.StartAnalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -80,17 +79,16 @@ EndFunction
 
 Function AnimateAmorousAdvLoveScene5 (actor aLover, actor bLover)
 
-    ;---| STORYBOARD DISPLAY
-    Debug.Trace("Amorous Adventures: AnimateMyLover: Ahlam and Serana ")
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorousAdvStoryBoard5.Show()
-    EndIf
+	;---| STORYBOARD DISPLAY
+	Debug.Trace("Amorous Adventures: AnimateMyLover: Ahlam and Serana ")
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorousAdvStoryBoard5.Show()
+	EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| Scene between Ahlam and Serana - player watches
-    ;--| OSex doesn't handle a scene between two NPCs
-    Util.StartNomalScene(aLover, bLover)
+	;--| Scene between Ahlam and Serana - player watches
+	Util.StartThreesomeScene(PlayerRef, aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -98,16 +96,16 @@ EndFunction
 
 Function AnimateAmorousAdvLoveScene6 (actor aLover)
 
-    ;---| STORYBOARD DISPLAY
-    Debug.Trace("Amorous Adventures: AnimateMyLover: Serana ")
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorousAdvStoryBoard6.Show()
-    EndIf
+	;---| STORYBOARD DISPLAY
+	Debug.Trace("Amorous Adventures: AnimateMyLover: Serana ")
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorousAdvStoryBoard6.Show()
+	EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| Player and Serana make love
-    Util.StartNomalScene(PlayerRef, aLover)
+	;--| Player and Serana make love
+	Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -115,17 +113,16 @@ EndFunction
 
 Function AnimateAmorousAdvLoveScene7 (actor aLover, actor bLover)
 
-    ;---| STORYBOARD DISPLAY -- Serana and Senna threesome
-    Debug.Trace("Amorous Adventures: AnimateMyLover: Serana and Senna threesome ")
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorousAdvStoryBoard7.Show()
-    EndIf
+	;---| STORYBOARD DISPLAY -- Serana and Senna threesome
+	Debug.Trace("Amorous Adventures: AnimateMyLover: Serana and Senna threesome ")
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorousAdvStoryBoard7.Show()
+	EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| Threesome between Senna, Serana and Player
-    ;--| OSex doesn't handle threesomes
-    Util.StartThreesomeScene(PlayerRef, aLover, bLover)
+	;--| Threesome between Senna, Serana and Player
+	Util.StartThreesomeScene(PlayerRef, aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -133,16 +130,16 @@ EndFunction
 
 Function AnimateAmorousAdvLoveScene8 (actor aLover)
 
-    ;---| STORYBOARD DISPLAY
-    Debug.Trace("Amorous Adventures: AnimateMyLover: Serana ")
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorousAdvStoryBoard8.Show()
-    EndIf
+	;---| STORYBOARD DISPLAY
+	Debug.Trace("Amorous Adventures: AnimateMyLover: Serana ")
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorousAdvStoryBoard8.Show()
+	EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| player makes love with Serana
-    Util.StartNomalScene(PlayerRef, aLover)
+	;--| player makes love with Serana
+	Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -150,16 +147,16 @@ EndFunction
 
 Function AnimateAmorousAdvLoveScene9 (actor aLover)
 
-    ;---| STORYBOARD DISPLAY
-    Debug.Trace("Amorous Adventures: AnimateMyLover: Serana ")
-    If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        AmorousAdvStoryBoard9.Show()
-    EndIf
+	;---| STORYBOARD DISPLAY
+	Debug.Trace("Amorous Adventures: AnimateMyLover: Serana ")
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+		AmorousAdvStoryBoard9.Show()
+	EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| player makes love with Serana
-    Util.StartNomalScene(PlayerRef, aLover)
+	;--| player makes love with Serana
+	Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
