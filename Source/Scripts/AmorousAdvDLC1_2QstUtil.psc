@@ -6,17 +6,14 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
     Debug.Trace("AnimateMyLover: Kiss ")
 
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard1.Show()
     EndIf
 
-
 ;---| BEGIN ANIMATION CODE |------
-
 
     ;--| Kissing Serana scene. Kissing only
     ;--| Skip for OSex
-
+    Util.StartKissingScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -27,25 +24,17 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
     ;---| STORYBOARD DISPLAY
     Debug.Trace("AnimateMyLover: Kiss ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard2.Show()
     EndIf
 
-
 ;---| BEGIN ANIMATION CODE |------
 
-
-        ;--| Kissing Serana. Only a kiss.
-
+    ;--| Kissing Serana. Only a kiss.
+    Util.StartKissingScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
-
-
-;--SEXLAB SPECIFIC
-
 
 ;--FADE TO BLACK STORYBOARDS
 Message Property AmorousAdvStoryBoard1 Auto  ;--| AmorousAdvSexMsgSeranaKissFirst
@@ -55,4 +44,4 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 ;--ACTORS
 Actor Property PlayerRef Auto
 
-
+AmorousAdvUtil Property Util Auto

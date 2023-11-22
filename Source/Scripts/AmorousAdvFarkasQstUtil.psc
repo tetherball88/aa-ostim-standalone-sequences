@@ -12,15 +12,13 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 
     Debug.Trace("AnimateMyLover: Farkas Cairn")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard1.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| sex with Farkas 
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -30,22 +28,17 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 
     Debug.Trace("AnimateMyLover: Farkas End")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard2.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| sex with Farkas 
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
-;--SEXLAB SPECIFIC
-
 
 ;--FACTIONS
 Faction Property AmorAdvLoverFaction Auto
@@ -58,6 +51,5 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 ;--ACTORS
 Actor Property PlayerRef Auto
 
-
-
+AmorousAdvUtil Property Util Auto
 

@@ -14,16 +14,14 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover, actor bLover)
     ;---| FARALDA AND NIRYA KISSING
     Debug.Trace("AnimateMyLover: Faralda Nirya Kiss ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard1.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Faralda and Nirya kiss each other. Kiss only.
     ;--| OSex doesn't handle a scene with two NPC's kissing
-
+    Util.StartKissingScene(aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -35,17 +33,13 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
     ;---| BRELYNA
     Debug.Trace("AnimateMyLover: Brelyna Kiss ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard2.Show()
     EndIf 
 
 ;---| BEGIN ANIMATION CODE |------
 
-
-
     ;--| Player kisses Brelyna.  This is a Kissing Scene Only
-
-
+    Util.StartKissingScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -57,19 +51,15 @@ Function AnimateAmorousAdvLoveScene3 (actor aLover)
     ;---| BRELYNA First Love Scene - scroll for anska
     Debug.Trace("Amorous Adventures: AnimateMyLover: Brelyna ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard3.Show()
     EndIf
 
-
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Player and Brelyna make love
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
-
 
 EndFunction
 
@@ -79,15 +69,13 @@ Function AnimateAmorousAdvLoveScene4 (actor aLover)
     ;---| BRELYNA Second Love Scene - Volskygge
     Debug.Trace("Amorous Adventures: AnimateMyLover: Brelyna ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard4.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Player and Brelyna make love
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -99,15 +87,13 @@ Function AnimateAmorousAdvLoveScene5 (actor aLover)
     ;---| NIRYA SPELL BREAK
     Debug.Trace("Amorous Adventures: AnimateMyLover: Nirya and Player ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard5.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Player and Nirya make love
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -119,17 +105,13 @@ Function AnimateAmorousAdvLoveScene6 (actor aLover)
     ;---| FARALDA
     Debug.Trace("AnimateMyLover: Faralda Kiss ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard6.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
-
     ;--| Player kisses Faralda
-
-
+    Util.StartKissingScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -143,20 +125,14 @@ Function AnimateAmorousAdvLoveScene7 (actor aLover, actor bLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| This is a scene with Faralda and Breylana having sex
     ;--| In SexLab this happens simultaneous with the Nirya + Player scene 
     ;--| OSex doesn't handle a scene with two NPC's making love
-
-
+    Util.StartNomalScene(aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
-
-;--SEXLAB SPECIFIC
-Message Property SexOptsFems  Auto
 
 ;--FACTIONS
 Faction Property AmorAdvLoverFaction Auto
@@ -173,3 +149,4 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 ;--ACTORS
 Actor Property PlayerRef Auto
 
+AmorousAdvUtil Property Util Auto

@@ -18,16 +18,12 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-
-    ;--| Player and Carlotta make sweet lovin'
-
+    ;--| Player and Carlotta make sweet loving
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
-;--SEXLAB SPECIFIC
-Message Property SexOptsFems  Auto  
 
 ;--FACTIONS
 Faction Property AmorAdvLoverFaction Auto
@@ -38,3 +34,5 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 
 ;--ACTORS
 Actor Property PlayerRef Auto
+
+AmorousAdvUtil Property Util Auto

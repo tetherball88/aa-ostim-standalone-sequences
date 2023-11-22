@@ -483,5 +483,3 @@ EndFunction
 
 Quest Property AmorousAdvQuestPointer1 Auto
 
-
-

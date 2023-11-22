@@ -1,6 +1,5 @@
 Scriptname AmorousAdvAerinQstUtil extends Quest
 
-
 ;========[ Faction Functions ]=====================
 
 Function MyNewLover(actor aLover)
@@ -40,7 +39,6 @@ Function ExitHagFaction(actor aActor)
 	aActor.RemoveFromFaction(HagravenFaction)
 EndFunction
 
-
 ;========[ Animation Functions ]=====================
 Function AnimateAmorousAdvLoveScene1 (actor aLover)
 
@@ -48,15 +46,13 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
     ;---| ILLIA
     Debug.Trace("Amorous Adventures: AnimateMyLover: Illia ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard1.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| A love scene
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -68,15 +64,13 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
     ;---| MJOLL
     Debug.Trace("Amorous Adventures: AnimateMyLover: Mjoll ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard2.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| A love scene
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -88,15 +82,13 @@ Function AnimateAmorousAdvLoveScene3 (actor aLover)
     ;---| SAPPHIRE
     Debug.Trace("Amorous Adventures: AnimateMyLover: Sapphire ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard3.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| A love scene
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -108,15 +100,13 @@ Function AnimateAmorousAdvLoveScene4 (actor aLover)
     ;---| INGUN
     Debug.Trace("Amorous Adventures: AnimateMyLover: Ingun ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard4.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| A love scene
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -134,9 +124,7 @@ Function SpawnSomeHags(actor aActor)
 
 EndFunction
 
-
-;--SEXLAB SPECIFIC
-Message Property SexOptsFems  Auto 
+ 
 
 ;--FACTIONS
 Faction Property AmorAdvLoverFaction Auto
@@ -158,3 +146,4 @@ Actorbase Property FireHag Auto
 Actorbase Property FrostHag Auto
 Actor Property PlayerRef Auto
 
+AmorousAdvUtil Property Util Auto

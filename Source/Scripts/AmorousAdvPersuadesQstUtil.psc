@@ -1,7 +1,5 @@
 Scriptname AmorousAdvPersuadesQstUtil extends Quest
 
-
-
 ;========[ Faction Functions ]=====================
 Function MyNewLover(actor aLover)
 	aLover.AddToFaction(AmorAdvLoverFaction)
@@ -17,20 +15,14 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
         AmorousAdvStoryBoard1.Show()
     EndIf
 
-
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Sex scene with whoever the NPC is
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
-
-;--SEXLAB SPECIFIC
-Message Property SexOptsFems  Auto  
 
 ;--FACTIONS
 Faction Property AmorAdvLoverFaction Auto
@@ -41,3 +33,5 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 
 ;--ACTORS
 Actor Property PlayerRef Auto
+
+AmorousAdvUtil Property Util Auto

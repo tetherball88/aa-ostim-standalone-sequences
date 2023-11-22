@@ -7,27 +7,23 @@ Function MyNewLover(actor aLover)
 	aLover.SetFactionRank(AmorAdvLoverFaction, 1)
 EndFunction
 
-
 ;========[ Animate Functions ]=====================
 Function AnimateAmorousAdvLoveScene1 (actor aLover)
 
     ;---| STORYBOARD DISPLAY
     Debug.Trace("Amorous Adventures: AnimateMyLover: Camilla on Bridge ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard1.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Camilla gives the player oral
-
+    Util.StartOralScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
 
 Function AnimateAmorousAdvLoveScene2 (actor aLover)
 
@@ -38,40 +34,30 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-
-
     ;--| player bribed Orgnar with their body - sex ensues
     ;--| Yeah... we're just skipping this for OSex.
-
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
 
 Function AnimateAmorousAdvLoveScene3 (actor aLover)
 
     ;---| STORYBOARD DISPLAY
     Debug.Trace("Amorous Adventures: AnimateMyLover: Camilla ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard3.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Player makes love with Camilla
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
-
-;--SEXLAB SPECIFIC
-Message Property SexOptsFems  Auto  
 
 ;--FACTIONS
 Faction Property AmorAdvLoverFaction Auto
@@ -85,3 +71,4 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 ;--ACTORS
 Actor Property PlayerRef Auto
 
+AmorousAdvUtil Property Util Auto

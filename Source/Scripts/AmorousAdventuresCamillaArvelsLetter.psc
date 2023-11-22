@@ -9,6 +9,4 @@ Event OnContainerChanged(ObjectReference newContainer, ObjectReference oldContai
 	endif
 EndEvent
 
-
-
 Actor Property PlayerRef Auto

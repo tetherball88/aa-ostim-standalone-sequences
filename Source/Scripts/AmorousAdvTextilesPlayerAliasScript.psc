@@ -1,6 +1,5 @@
 Scriptname AmorousAdvTextilesPlayerAliasScript extends ReferenceAlias  
 
-
 Quest Property pAATextilesQst Auto Conditional
 Ingredient Property pNirn Auto Conditional
 Ingredient Property pPearl Auto Conditional

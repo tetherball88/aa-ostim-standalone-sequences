@@ -178,6 +178,5 @@ EndFunction
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-
 Spell Property AmorousAdvCircleOfSex Auto
 Actor Property PlayerRef  Auto

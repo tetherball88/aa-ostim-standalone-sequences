@@ -6,7 +6,6 @@ Function MyNewLover(actor aLover)
 	aLover.SetFactionRank(AmorAdvLoverFaction, 1)
 EndFunction
 
-
 ;========[ Animation Functions ]=====================
 Function AnimateAmorousAdvLoveScene1 (actor aLover)
 
@@ -14,14 +13,13 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
     ;---| AELA AT GALLOWS ROCK
     Debug.Trace("Amorous Adventures: AnimateMyLover: Aela ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard1.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| A love scene
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -33,21 +31,17 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
     ;---| AELA FINALE
     Debug.Trace("Amorous Adventures: AnimateMyLover: Aela ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard2.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| A love scene
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
-;--SEXLAB SPECIFIC
-Message Property SexOptsFems  Auto  
 
 ;--FACTIONS
 Faction Property AmorAdvLoverFaction Auto
@@ -60,3 +54,4 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 ;--ACTORS
 Actor Property PlayerRef Auto
 
+AmorousAdvUtil Property Util Auto

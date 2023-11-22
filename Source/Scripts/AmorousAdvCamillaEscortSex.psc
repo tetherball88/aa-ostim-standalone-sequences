@@ -25,7 +25,6 @@ EndFunction
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-
 AmorousAdvCamillaQstUtil Property aalUtil  Auto 
 
 FavorDialogueScript Property pFDS  Auto  

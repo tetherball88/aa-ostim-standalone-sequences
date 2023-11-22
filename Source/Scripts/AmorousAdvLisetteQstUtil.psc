@@ -61,22 +61,19 @@ Function StartSongQuests()
     BardSongsInstrumental.Start()
 EndFunction
 
-
 ;========[ Animation Functions ]=====================
 Function AnimateAmorousAdvLoveScene1 (actor aLover)
 
     ;---| STORYBOARD DISPLAY
      Debug.Trace("Amorous Adventures: AnimateMyLover: Illdi ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard1.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| sex scene with Illdi the virgin
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -87,22 +84,17 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
     ;---| STORYBOARD DISPLAY
     Debug.Trace("AnimateMyLover: Lisette ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard2.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Make love with Lisette
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
-;--SEXLAB SPECIFIC
-Message Property SexOptsFems  Auto  
 
 ;--FACTIONS
 Faction Property AmorAdvLoverFaction Auto
@@ -144,3 +136,4 @@ Faction Property BardAudienceExcludedFaction Auto
 Faction Property BardSingerFaction Auto
 Faction Property JobBardFaction Auto
 
+AmorousAdvUtil Property Util Auto

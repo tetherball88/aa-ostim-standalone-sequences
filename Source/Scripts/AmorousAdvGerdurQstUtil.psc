@@ -1,13 +1,11 @@
 Scriptname AmorousAdvGerdurQstUtil extends Quest
 
-
 ;========[ Faction Functions ]=====================
 
 Function MyNewLover(actor aLover)
 	aLover.AddToFaction(AmorAdvLoverFaction)
 	aLover.SetFactionRank(AmorAdvLoverFaction, 1)
 EndFunction
-
 
 ;========[ Animate Functions ]=====================
 
@@ -21,17 +19,12 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| generc sex scene. Could be player doing Gerdur or Ralof
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
-
-;--SEXLAB SPECIFIC
-Message Property SexOptsFems  Auto  
 
 ;--FACTIONS
 Faction Property AmorAdvLoverFaction Auto
@@ -43,3 +36,4 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 ;--ACTORS
 Actor Property PlayerRef Auto
 
+AmorousAdvUtil Property Util Auto

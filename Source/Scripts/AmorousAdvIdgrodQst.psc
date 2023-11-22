@@ -358,10 +358,6 @@ EndFunction
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
 
-
 Book Property Book3ValuableLostLegends Auto
 Actor Property PlayerRef Auto
-
-
-
 

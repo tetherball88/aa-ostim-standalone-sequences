@@ -29,14 +29,13 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
     ;---| Elisif KISS
     Debug.Trace("AnimateMyLover: Elisif Kiss ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard1.Show()
     EndIf 
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Player kisses Elisif.  This is a Kissing Scene Only
+    Util.StartKissingScene(PlayerRef, aLover)
 
 	
 	
@@ -50,16 +49,13 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
     ;---| ELISIF - after Frostflow Abyss
     Debug.Trace("Amorous Adventures: AnimateMyLover: Elisif ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard2.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
 	;---| Sex with Elisif
-
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -70,7 +66,6 @@ Function AnimateAmorousAdvLoveScene3(actor aLover, actor bLover)
     ;---| STORYBOARD DISPLAY
 	Debug.Trace("AnimateMyLover: Elisif and Elisif")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard3.Show()
     EndIf
 
@@ -80,17 +75,11 @@ Function AnimateAmorousAdvLoveScene3(actor aLover, actor bLover)
     ;--| aLover = Elisif
     ;--| bLover = Elisif
     ;--| OSex has no threesome functionality, use Elisif (LOL)
-
+    Util.StartThreesomeScene(PlayerRef, aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
-
-
-
-;--SEXLAB SPECIFIC
-Message Property SexOptsFems  Auto  
 
 ;--FACTIONS
 Faction Property AmorAdvLoverFaction Auto
@@ -105,3 +94,5 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 
 ;--ACTORS
 Actor Property PlayerRef Auto
+
+AmorousAdvUtil Property Util Auto

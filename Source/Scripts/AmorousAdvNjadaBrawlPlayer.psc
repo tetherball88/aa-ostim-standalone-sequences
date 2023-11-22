@@ -1,6 +1,5 @@
 Scriptname AmorousAdvNjadaBrawlPlayer extends ReferenceAlias  
 
-
 import game
 
 Event OnHit(ObjectReference akAggressor, Form akWeapon, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked)
@@ -43,7 +42,6 @@ Event OnEnterBleedout()
 ;	endif
 EndEvent
 
-
 Event OnLocationChange(Location akOldLoc, Location akNewLoc)
   if Game.GetPlayer().IsInLocation(Opponent.GetActorRef().GetCurrentLocation()) == False
      Debug.Trace(self + "Player has left opponent's location, shutting down")
@@ -52,7 +50,6 @@ Event OnLocationChange(Location akOldLoc, Location akNewLoc)
 endEvent
 
 Weapon Property UnarmedWeapon  Auto  
-
 
 ReferenceAlias Property Opponent  Auto  
 {opponent in the brawl}

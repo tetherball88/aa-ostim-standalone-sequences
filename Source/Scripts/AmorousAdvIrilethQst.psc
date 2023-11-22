@@ -89,7 +89,6 @@ If (akLover.GetRelationshipRank(PlayerRef) < 1)
 EndIf
 kmyQuest.MyNewLover(akLover)
 
-
 SetStage(200)
 ;END CODE
 EndFunction

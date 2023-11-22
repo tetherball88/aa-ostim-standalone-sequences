@@ -17,4 +17,3 @@ EndFunction
 
 Quest Property AmorousAdvQuestPointer1 Auto  ;--| SexLabAmorousAdventuresDLC1_Mark
 
-

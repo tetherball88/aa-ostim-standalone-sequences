@@ -7,8 +7,6 @@ Function MyNewLover(actor aLover)
 	aLover.SetFactionRank(AmorAdvLoverFaction, 1)
 EndFunction
 
-
-
 ;========[ Animation Functions ]=====================
 Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;-- Endarie from Stage 28
@@ -16,15 +14,13 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
     ;---| STORYBOARD DISPLAY
     Debug.Trace("Amorous Adventures: AnimateMyLover: Endarie ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard1.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Sex scene with Endarie. a 69 in SexLab
-
+    Util.StartOral69Scene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -36,20 +32,16 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover, actor bLover)
     ;---| STORYBOARD DISPLAY
     Debug.Trace("Amorous Adventures: AnimateMyLover: Lydia and Jordis ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard2.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
-
     ;--| A Threesome! - OSex doesn't handle threesomes
     ;--| aLover = Jordis
     ;--| bLover = Lydia
     ;--| ... Skip for OSex
-
-
+    Util.StartThreesomeScene(PlayerRef, aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -61,15 +53,13 @@ Function AnimateAmorousAdvLoveScene3 (actor aLover)
     ;---| STORYBOARD DISPLAY
     Debug.Trace("Amorous Adventures: AnimateMyLover: Jordis ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard3.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Player and Jordis make love
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -81,27 +71,20 @@ Function AnimateAmorousAdvLoveScene4 (actor aLover, actor bLover)
     ;---| STORYBOARD DISPLAY
     Debug.Trace("Amorous Adventures: AnimateMyLover: Endarie and Jordis ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard4.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| A Threesome! - OSex doesn't handle threesomes
     ;--| aLover = Jordis
     ;--| bLover = Endarie
     ;--| Use Endarie for OSex
-
-
+    Util.StartThreesomeScene(PlayerRef, aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
-
-;--SEXLAB SPECIFIC
-Message Property SexOptsFems  Auto  
 
 ;--FACTIONS
 Faction Property AmorAdvLoverFaction Auto
@@ -116,4 +99,4 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 ;--ACTORS
 Actor Property PlayerRef Auto
 
-
+AmorousAdvUtil Property Util Auto

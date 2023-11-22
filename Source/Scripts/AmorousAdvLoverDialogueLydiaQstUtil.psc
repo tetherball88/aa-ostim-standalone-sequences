@@ -1,6 +1,5 @@
 Scriptname AmorousAdvLoverDialogueLydiaQstUtil extends Quest  
 
-
 Function LoverCommented()
 	;---control how often comments about are heard
 	float DaysUntilNextAllowed = 0.04  ;about 1 "game hour" expressed in GameDaysPassed

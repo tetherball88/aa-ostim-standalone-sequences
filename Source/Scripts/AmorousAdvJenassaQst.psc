@@ -348,4 +348,3 @@ EndFunction
 MiscObject Property Gold001 Auto
 Actor Property PlayerRef Auto
 
-

@@ -1,6 +1,5 @@
 Scriptname AmorousAdvNjadaBrawlAlias extends ReferenceAlias  
 
-
 Faction Property DGIntimidateFaction Auto
 
 import game

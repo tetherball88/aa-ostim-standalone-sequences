@@ -1,7 +1,5 @@
 Scriptname AmorousAdvRikkeQstUtil extends Quest  
 
-
-
 ;========[ Faction Functions ]=====================
 
 Function MyNewLover(actor aLover)
@@ -16,21 +14,19 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
     ;---| RIKKE KISS
     Debug.Trace("AnimateMyLover: Rikke Kiss ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard1.Show()
     EndIf 
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Player kisses Rikke.  This is a Kissing Scene Only
+    Util.StartKissingScene(PlayerRef, aLover)
 
 	
 	
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
 
 Function AnimateAmorousAdvLoveScene2 (actor aLover)
 
@@ -39,23 +35,18 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
     Debug.Trace("Amorous Adventures: AnimateMyLover: Rikke ")
 
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard2.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Player and Rikke make love
+    Util.StartNomalScene(PlayerRef, aLover)
 
 	
 ;---| END ANIMATION CODE |------
 
 EndFunction
-
-
-;--SEXLAB SPECIFIC
-Message Property SexOptsFems  Auto  
 
 ;--FACTIONS
 Faction Property AmorAdvLoverFaction Auto
@@ -68,3 +59,4 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 ;--ACTORS
 Actor Property PlayerRef Auto
 
+AmorousAdvUtil Property Util Auto

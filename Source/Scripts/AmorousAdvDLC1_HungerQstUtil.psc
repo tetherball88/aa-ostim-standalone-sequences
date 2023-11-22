@@ -38,15 +38,13 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
     ;---| STORYBOARD DISPLAY
     Debug.Trace("Amorous Adventures: AnimateMyLover: Hungry Serana ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard1.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Player and Serana make love
-
+	Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -57,7 +55,6 @@ GlobalVariable Property GameDaysPassed Auto
 GlobalVariable Property AmorousAdvSeranaHungerTimer Auto
 
 ;--SEXLAB
-Message Property SexOptsFems  Auto  
 
 ;--FADE TO BLACK STORYBOARDS
 Message Property AmorousAdvStoryBoard1 Auto ;--| AmorousAdvSexMsgSeranaDLC1_Hunger
@@ -66,4 +63,4 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 ;--ACTORS
 Actor Property PlayerRef Auto
 
-
+AmorousAdvUtil Property Util Auto

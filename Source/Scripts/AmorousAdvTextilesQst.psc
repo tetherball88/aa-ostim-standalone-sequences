@@ -142,4 +142,3 @@ GlobalVariable Property texCount  Auto
 
 AmorousAdvTextilesQstUtil Property AATextilesQstUtil Auto
 
-

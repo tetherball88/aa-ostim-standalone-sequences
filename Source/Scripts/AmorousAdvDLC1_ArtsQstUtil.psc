@@ -1,13 +1,11 @@
 Scriptname AmorousAdvDLC1_ArtsQstUtil extends Quest
 
-
 ;========[ Faction Functions ]=====================
 
 Function MyNewLover(actor aLover)
 	aLover.AddToFaction(AmorAdvLoverFaction)
 	aLover.SetFactionRank(AmorAdvLoverFaction, 1)
 EndFunction
-
 
 ;========[ control how often Serana gets hungry ]=====================
 Function FeedingInitialize()
@@ -18,7 +16,6 @@ Function FeedingInitialize()
 	AmorousAdvSeranaHungerTimer.SetValue(NextAllowed)
 
 EndFunction  
-
 
 Function FeedingSerana()
 
@@ -51,23 +48,20 @@ Function FeedingSerana()
 
 EndFunction  
 
-
 ;========[ Animation Functions ]=====================
 Function AnimateAmorousAdvLoveScene1 (actor aLover)
 
     ;---| STORYBOARD DISPLAY
     Debug.Trace("AnimateMyLover: Kiss ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
        AmorousAdvStoryBoard1.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Should be a kissing scene only
     ;--| Skip for OSex
-
+    Util.StartKissingScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -78,18 +72,14 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
     ;---| STORYBOARD DISPLAY
     Debug.Trace("AnimateMyLover: Kiss ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard2.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
-
     ;--| Should be a kissing scene only
     ;--| Skip for OSex
-
-
+    Util.StartKissingScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -100,17 +90,14 @@ Function AnimateAmorousAdvLoveScene3 (actor aLover)
     ;---| STORYBOARD DISPLAY
     Debug.Trace("AnimateMyLover: Serana Arts 1 ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
        AmorousAdvStoryBoard3.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Serana masturbates solo.  Player watches.
     ;--| OSex doesn't handle an NPC solo masturbation scene
-
-
+    Util.StartMasturbationScene(aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -121,17 +108,13 @@ Function AnimateAmorousAdvLoveScene4 (actor aLover)
     ;---| STORYBOARD DISPLAY
     Debug.Trace("AnimateMyLover: Serana Arts 2 ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard4.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
-
     ;--| Serana performing Oral on player
-
-
+    Util.StartOralScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -142,17 +125,13 @@ Function AnimateAmorousAdvLoveScene5 (actor aLover)
     ;---| STORYBOARD DISPLAY
     Debug.Trace("AnimateMyLover: Serana Arts 3 ")
     If(AmorousAdvUseBlackScreens.GetValue() == 1)
-        Game.FadeOutGame(false, true, 5.0, 5.0)
         AmorousAdvStoryBoard5.Show()
     EndIf
 
 ;---| BEGIN ANIMATION CODE |------
 
-
-
     ;--| Serana and player make love
-
-
+    Util.StartNomalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -169,12 +148,8 @@ Function AnimateAmorousAdvLoveScene6 (actor aLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-
-
     ;--| Should be an anal only scene. Player gives Serana anal sex
-
-
-
+    Util.StartAnalScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -185,7 +160,6 @@ GlobalVariable Property GameDaysPassed Auto
 GlobalVariable Property AmorousAdvSeranaHungerTimer Auto
 
 ;--SEXLAB
-Message Property SexOptsFems  Auto  
 
 ;--FACTIONS
 Faction Property AmorAdvLoverFaction Auto
@@ -202,9 +176,4 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 ;--ACTORS
 Actor Property PlayerRef Auto
 
-
-
-
-
-
-
+AmorousAdvUtil Property Util Auto

@@ -35,7 +35,6 @@ EndFunction
 
 Function AddMyLover(actor aLover)
 
-
 	int iRank = PlayerRef.GetFactionRank(AmorAdvPlayersLoversCountFaction)
 	If (iRank < 0)
 		Debug.Trace("AddMyLover: AmorAdvPlayersLoversCountFaction is " + iRank + " Set to 0")
@@ -111,7 +110,6 @@ Function RemoveMyLover(actor aLover, bool HadSex)
 	aLover.EvaluatePackage()
 	
 EndFunction
-
 
 ;========[ LOVER Functions ]=====================
 
@@ -319,12 +317,7 @@ Function SetLoverEssential(actor aLover)
 	
 	EndIf
 
-
-
 EndFunction
-
-
-
 
 ;========[ Animate Functions ]=====================
 Function AnimateMyLover(actor aLover, int sexType)
@@ -334,12 +327,9 @@ Function AnimateMyLover(actor aLover, int sexType)
         AmorAdvLoveHappensMSG.Show()
     EndIf
 
-
 ;---| BEGIN ANIMATION CODE |------
 
-
-
-
+	Util.StartNomalScene(PlayerRef, aLover);LATER
 
 ;---| END ANIMATION CODE |------
 
@@ -355,16 +345,13 @@ Function AnimateMyFriends()
     Actor aLover = MyLover1.GetRef() as actor
     Actor bLover = MyLover2.GetRef() as actor	
 
-
 ;---| BEGIN ANIMATION CODE |------
-
 
     ;--| Two NPC's knock boots
     ;--| OSex doesn't handle a scene between two NPC's
-
+	Util.StartNomalScene(aLover, bLover)
 
 ;---| END ANIMATION CODE |------
-
 
 	RemoveMyLover(bLover, True)
 	RemoveMyLover(aLover, True)
@@ -382,10 +369,9 @@ Function AnimateMyWalkUpFriends(actor aLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Two NPC's knock boots
     ;--| OSex doesn't handle a scene between two NPC's
-
+	Util.StartNomalScene(aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -406,10 +392,9 @@ Function AnimateThreesome()
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| threesome with the player
     ;--| OSex doesn't handle a Threesome
-
+	Util.StartThreesomeScene(PlayerRef, aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -429,10 +414,9 @@ Function AnimateWalkUpThreesome(actor aLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| threesome with the player
     ;--| OSex doesn't handle a Threesome
-
+	Util.StartThreesomeScene(PlayerRef, aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -447,12 +431,9 @@ Function AnimateSoloLover(actor aLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-
-
     ;--| The NPC masturbates
     ;--| OSex doesn't handle a Solo masturbation Scene of an NPC
-
-
+	Util.StartMasturbationScene(aLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -467,18 +448,14 @@ Function AnimateKissMyLover(actor aLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-
     ;--| Just a kiss only...
-
-
+	Util.StartKissingScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
 
 ;========[ PROPERTIES ]=====================
-
-
 
 Package Property AmorousAdventuresLoverFollow  Auto
 Faction Property AmorAdvCurrentLoversFaction  Auto
@@ -490,7 +467,6 @@ Faction Property PotentialFollowersFaction Auto
 ReferenceAlias Property MyLover1 Auto
 ReferenceAlias Property MyLover2 Auto
 
-Message Property SexOptsFems  Auto  
 Message Property AmorAdvDispositionImpMSG Auto
 Message Property AmorAdvLoverFollowsMSG Auto
 Message Property AmorAdvLoverStopsFollowMSG Auto
@@ -535,3 +511,4 @@ Actor Property Vilkas Auto
 Actor Property Adelaisa Auto
 Actor Property PlayerRef Auto
 
+AmorousAdvUtil Property Util Auto
