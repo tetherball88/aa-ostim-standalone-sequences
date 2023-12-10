@@ -35,13 +35,7 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Idgrod the younger masturbates solo. Player watches.
-    ;--| OStim doesn't handle NPC solo masturbation scene
-    ;--| So start a scene with both actors and have Idgrod masturbate
-    ; Util.StartMasturbationScene(PlayerRef, aLover)
-
-    ; OpenSex removed masturbation scenes for now
-    ; Restore masturbation scenes when they are added back
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartMasturbationScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 

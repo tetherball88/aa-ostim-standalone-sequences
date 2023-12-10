@@ -128,7 +128,7 @@ Function AnimateAmorousAdvLoveScene7 (actor aLover, actor bLover)
     ;--| This is a scene with Faralda and Breylana having sex
     ;--| In SexLab this happens simultaneous with the Nirya + Player scene 
     ;--| OSex doesn't handle a scene with two NPC's making love
-    Util.StartNomalScene(aLover, bLover)
+    Util.StartNPCScene(aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 

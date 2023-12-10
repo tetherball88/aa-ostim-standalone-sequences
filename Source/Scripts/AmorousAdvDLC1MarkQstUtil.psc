@@ -88,7 +88,7 @@ Function AnimateAmorousAdvLoveScene5 (actor aLover, actor bLover)
 ;---| BEGIN ANIMATION CODE |------
 
 	;--| Scene between Ahlam and Serana - player watches
-	Util.StartThreesomeScene(PlayerRef, aLover, bLover)
+	Util.StartNPCScene(aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 

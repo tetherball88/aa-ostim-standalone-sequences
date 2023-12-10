@@ -344,7 +344,7 @@ Function AnimateMyFriends()
 ;---| BEGIN ANIMATION CODE |------
 
 	;--| Two NPC's knock boots
-	Util.StartNomalScene(aLover, bLover)
+	Util.StartNPCScene(aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -365,7 +365,7 @@ Function AnimateMyWalkUpFriends(actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
 	;--| Two NPC's knock boots
-	Util.StartNomalScene(aLover, bLover)
+	Util.StartNPCScene(aLover, bLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -423,13 +423,7 @@ Function AnimateSoloLover(actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
 	;--| The NPC masturbates
-	;--| OpenSex doesn't handle a Solo masturbation Scene of an NPC
-	;--| So start a scene with both actors and have NPC masturbate
-	; Util.StartMasturbationScene(PlayerRef, aLover)
-
-	; OpenSex removed masturbation scenes for now
-    ; Restore masturbation scenes when they are added back
-    Util.StartNomalScene(PlayerRef, aLover)
+	Util.StartMasturbationScene(PlayerRef, aLover)
 
 	RemoveMyLover(aLover, True)
 

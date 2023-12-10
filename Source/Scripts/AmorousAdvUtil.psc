@@ -31,7 +31,11 @@ Function StartNomalScene(Actor dom, Actor sub)
 
     Utility.Wait(0.2)
 
-    StartOstimScene(dom, sub)
+    Actor[] actors = new Actor[2]
+    actors[0] = dom
+    actors[1] = sub
+
+    OThread.QuickStart(actors)
 
 EndFunction
 
@@ -39,13 +43,18 @@ Function StartOralScene(Actor dom, Actor sub)
 
     Utility.Wait(0.2)
 
+    Actor[] actors = new Actor[2]
+    actors[0] = dom
+    actors[1] = sub
+
     OsexIntegrationMain ostim = OUtils.GetOStim()
+
     ; if dom is female, start a vaginal oral scene
     If (ostim.isFemale(dom))
-        StartOstimScene(dom, sub, animationStart="OpS|LyF!Sit|VJ|SittingCunnilingus")
+        OThread.QuickStart(actors, StartingAnimation=OLibrary.GetRandomSceneWithAction(actors, "cunnilingus"))
     ; if dom is male, start a blowjob oral scene
     Else
-        StartOstimScene(dom, sub, animationStart="OpS|Sta!Kne|BJ|HandOnHeadBlowjob")
+        OThread.QuickStart(actors, StartingAnimation=OLibrary.GetRandomSceneWithAction(actors, "blowjob"))
     EndIf
 
 EndFunction
@@ -54,7 +63,11 @@ Function StartOral69Scene(Actor dom, Actor sub)
 
     Utility.Wait(0.2)
 
-    StartOralScene(dom, sub)
+    Actor[] actors = new Actor[2]
+    actors[0] = dom
+    actors[1] = sub
+
+    OThread.QuickStart(actors, StartingAnimation=OLibrary.GetRandomSceneWithAllActionsCSV(actors, "cunnilingus,blowjob"))
 
 EndFunction
 
@@ -62,7 +75,11 @@ Function StartAnalScene(Actor dom, Actor sub)
 
     Utility.Wait(0.2)
 
-    StartMissionaryScene(dom, sub)
+    Actor[] actors = new Actor[2]
+    actors[0] = dom
+    actors[1] = sub
+
+    OThread.QuickStart(actors, StartingAnimation=OLibrary.GetRandomSceneWithAction(actors, "analsex"))
 
 EndFunction
 
@@ -70,7 +87,11 @@ Function StartMissionaryScene(Actor dom, Actor sub)
 
     Utility.Wait(0.2)
 
-    StartOstimScene(dom, sub)
+    Actor[] actors = new Actor[2]
+    actors[0] = dom
+    actors[1] = sub
+
+    OThread.QuickStart(actors, StartingAnimation=OLibrary.GetRandomSceneWithSceneTag(actors, "missionary"))
 
 EndFunction
 
@@ -78,7 +99,11 @@ Function StartDoggyScene(Actor dom, Actor sub)
 
     Utility.Wait(0.2)
 
-    StartOstimScene(dom, sub)
+    Actor[] actors = new Actor[2]
+    actors[0] = dom
+    actors[1] = sub
+
+    OThread.QuickStart(actors, StartingAnimation=OLibrary.GetRandomSceneWithSceneTag(actors, "doggystyle"))
 
 EndFunction
 
@@ -86,19 +111,11 @@ Function StartCowgirlScene(Actor dom, Actor sub)
 
     Utility.Wait(0.2)
 
-    StartOstimScene(dom, sub)
+    Actor[] actors = new Actor[2]
+    actors[0] = dom
+    actors[1] = sub
 
-EndFunction
-
-; This function is currently unused
-Function StartStandingScene(Actor dom, Actor sub)
-
-    String animationClass = ""
-    String animationStart = ""
-
-    Utility.Wait(0.2)
-
-    StartOstimScene(dom, sub, animationClass, animationStart)
+    OThread.QuickStart(actors, StartingAnimation=OLibrary.GetRandomSceneWithSceneTag(actors, "cowgirl"))
 
 EndFunction
 
@@ -106,103 +123,49 @@ Function StartThreesomeScene(Actor dom, Actor sub, Actor thr)
 
     Utility.Wait(0.2)
 
-    OsexIntegrationMain ostim = OUtils.GetOStim()
+    Actor[] actors = new Actor[3]
+    actors[0] = dom
+    actors[1] = sub
+    actors[2] = thr
 
-    ostim.startScene(dom, sub, zThirdActor = thr)
+    OThread.QuickStart(actors)
 
 EndFunction
 
 Function StartNPCScene(Actor npc1, Actor npc2)
     Utility.Wait(0.2)
 
-    OsexIntegrationMain ostim = OUtils.GetOStim()
+    Actor[] actors = new Actor[2]
+	actors[0] = npc1
+	actors[1] = npc2
 
-    Int Time = 30 ; This is a looping times, not seconds.
-    ; Enable Undress
-    bool bAlwaysUndressAtAnimStart = ostim.AlwaysUndressAtAnimStart
-    ostim.AlwaysUndressAtAnimStart = True
-    ; Disable AI control
-    bool bUseAIControl = ostim.UseAIControl
-    ostim.UseAIControl = False
-    bool bUseAINPConNPC = ostim.UseAINPConNPC
-    ostim.UseAINPConNPC = False
-    bool bUseAINonAggressive = ostim.UseAINonAggressive
-    ostim.UseAINonAggressive = False
-
-    ; NPC love scene
-    ; all Amorous Adventures NPC scenes are between women
-    ostim.StartScene(npc1, npc2, zStartingAnimation = "OpS|LyF!Sit|VJ|AceSittingCunnilingus")
-    While (ostim.AnimationRunning())
-        If (Time == 0)
-            ostim.EndAnimation()
-            Utility.Wait(3.0)
-        Else
-            Utility.Wait(1.0)
-        EndIf
-        Time -= 1
-    EndWhile
-    ; Init
-    ostim.AlwaysUndressAtAnimStart = bAlwaysUndressAtAnimStart
-    ostim.UseAIControl = bUseAIControl
-    ostim.UseAINPConNPC = bUseAINPConNPC
-    ostim.UseAINonAggressive = bUseAINonAggressive
+	int BuilderID = OThreadBuilder.Create(actors)
+	OThreadBuilder.NoFurniture(BuilderID)
+	OThreadBuilder.Start(BuilderID)
 EndFunction
 
 Function StartMasturbationScene(Actor player, Actor lover)
 
     Utility.Wait(0.2)
 
-    OsexIntegrationMain ostim = OUtils.GetOStim()
+    Actor[] actors = new Actor[1]
+    actors[1] = lover
 
-    Int Time = 30 ; This is a looping times, not seconds.
-    ostim.HideAllSkyUIWidgets()
-    ostim.DisableOSAControls = True
-    ; Disable AI control
-    bool bUseAIControl = ostim.UseAIControl
-    ostim.UseAIControl = False
-    bool bUseAINPConNPC = ostim.UseAINPConNPC
-    ostim.UseAINPConNPC = False
-    bool bUseAINonAggressive = ostim.UseAINonAggressive
-    ostim.UseAINonAggressive = False
-    ; Enable Undress
-    bool bAlwaysUndressAtAnimStart = ostim.AlwaysUndressAtAnimStart
-    ostim.AlwaysUndressAtAnimStart = True
+    String masturbationAnimation = OLibrary.GetRandomSceneWithSceneTag(actors, "femalemasturbation")
 
-    ; Masturbation scene
-    ostim.StartScene(player, lover, zStartingAnimation ="OpS|Sit!Sit|Pf2|AceSittingMasturbationFemale")
-    While (ostim.AnimationRunning())
-        If (Time == 0)
-            ostim.EndAnimation()
-            Utility.Wait(3.0)
-        Else
-            Utility.Wait(1.0)
-        EndIf
-        Time -= 1
-    EndWhile
-    ; Init
-    ostim.ShowAllSkyUIWidgets()
-    ostim.DisableOSAControls = False
-    ostim.UseAIControl = bUseAIControl
-    ostim.UseAINPConNPC = bUseAINPConNPC
-    ostim.UseAINonAggressive = bUseAINonAggressive
-    ostim.AlwaysUndressAtAnimStart = bAlwaysUndressAtAnimStart
+    if masturbationAnimation == ""
+        StartNomalScene(player, lover)
+    else
+        int builder = OThreadBuilder.Create(actors)
 
-EndFunction
+        OThreadBuilder.SetDuration(builder, 30)
+        OThreadBuilder.SetStartingAnimation(builder, masturbationAnimation)
+        OThreadBuilder.NoAutoMode(builder)
+        OThreadBuilder.NoPlayerControl(builder)
+        OThreadBuilder.NoFurniture(builder)
 
-Function StartOstimScene(Actor dom, Actor sub, String animationClass = "", String animationStart = "", String animationHasInName = "")
-
-    OsexIntegrationMain ostim = OUtils.GetOStim()
-    String startingAnim = ""
-
-    If (animationStart != "")
-        startingAnim = animationStart
-    EndIf
-
-    If (dom != PlayerRef && sub != PlayerRef)
-        ostim.GetUnusedSubthread().StartScene(dom, sub)
-    Else
-        ostim.startScene(dom, sub, zStartingAnimation = startingAnim)
-    EndIf
+        OThreadBuilder.Start(builder)
+    endif
 EndFunction
 
 ; Start scene without sexual animation
@@ -254,44 +217,22 @@ EndFunction
 ; Start OStim kissing secene without undressing
 ; TODO make passing "Em" into type running different kissing anim randomly.
 Function StartOstimKissing(Actor dom, Actor sub)
+    Actor[] actors = new Actor[2]
+    actors[0] = dom
+    actors[1] = sub
 
-    OsexIntegrationMain ostim = OUtils.GetOStim()
+    String kissingAnimation = OLibrary.GetRandomSceneSuperloadCSV(actors, AnyActionType = "kissing", ActionBlacklistTypes = "sexual")
 
-    ; Kiss scenes should only be a kiss and nothing else, so use the standard StandingKiss animation
-    String animation = "OpS|Sta!Sta|Ho|StandingKiss"
+    int builder = OThreadBuilder.Create(actors)
 
-    Int Time = 10 ; This is a looping times, not seconds.
-    ostim.HideAllSkyUIWidgets()
-    ostim.DisableOSAControls = True
-    ; Disable AI control
-    bool bUseAIControl = ostim.UseAIControl
-    ostim.UseAIControl = False
-    bool bUseAINPConNPC = ostim.UseAINPConNPC
-    ostim.UseAINPConNPC = False
-    bool bUseAINonAggressive = ostim.UseAINonAggressive
-    ostim.UseAINonAggressive = False
-    ; Disable Undress
-    bool bAlwaysUndressAtAnimStart = ostim.AlwaysUndressAtAnimStart
-    ostim.AlwaysUndressAtAnimStart = False
+    OThreadBuilder.SetDuration(builder, 15)
+    OThreadBuilder.SetStartingAnimation(builder, kissingAnimation)
+    OThreadBuilder.NoAutoMode(builder)
+    OThreadBuilder.NoPlayerControl(builder)
+    OThreadBuilder.NoUndressing(builder)
+    OThreadBuilder.NoFurniture(builder)
 
-    ; Kiss scence
-    ostim.StartScene(dom, sub, zStartingAnimation = animation);KISS
-    While (ostim.AnimationRunning())
-        If (Time == 0)
-            ostim.EndAnimation()
-            Utility.Wait(3.0)
-        Else
-            Utility.Wait(1.0)
-        EndIf
-        Time -= 1
-    EndWhile
-    ; Init
-    ostim.ShowAllSkyUIWidgets()
-    ostim.DisableOSAControls = False
-    ostim.UseAIControl = bUseAIControl
-    ostim.UseAINPConNPC = bUseAINPConNPC
-    ostim.UseAINonAggressive = bUseAINonAggressive
-    ostim.AlwaysUndressAtAnimStart = bAlwaysUndressAtAnimStart
+    OThreadBuilder.Start(builder)
 
 EndFunction
 
@@ -304,11 +245,11 @@ Function StartWeddingScene(Actor dom, Actor sub, ObjectReference oBed)
 EndFunction
 
 Function StartOstimWedding(Actor dom, Actor sub, ObjectReference oBed)
+    Actor[] actors = new Actor[2]
+    actors[0] = dom
+    actors[1] = sub
 
-    OsexIntegrationMain ostim = OUtils.GetOStim()
-
-    ; Weding scence
-    ostim.StartScene(dom, sub, zUndressDom = True, zUndressSub = True, zStartingAnimation = "", Bed = oBed)
+    OThread.QuickStart(actors, StartingAnimation="", FurnitureRef=oBed)
 EndFunction
 
 Event OnInit()
