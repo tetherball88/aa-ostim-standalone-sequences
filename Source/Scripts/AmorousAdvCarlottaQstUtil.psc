@@ -19,7 +19,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Player and Carlotta make sweet loving
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_carlotta_carlottas_house_regular_doublebed", "doublebed")
 
 ;---| END ANIMATION CODE |------
 

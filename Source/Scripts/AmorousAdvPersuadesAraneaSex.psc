@@ -7,7 +7,7 @@ Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 ;sex
-aalUtil.AnimateAmorousAdvLoveScene1(akSpeaker)
+aalUtil.AnimateAmorousAdvLoveScene2(akSpeaker)
 ;END CODE
 EndFunction
 ;END FRAGMENT

@@ -19,7 +19,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Player and Senna have sex
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_senna_temple_of_dibella_chair", "chair")
 
 ;---| END ANIMATION CODE |------
 

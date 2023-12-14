@@ -313,7 +313,7 @@ AmorousAdvEbonyQstUtil kmyQuest = __temp as AmorousAdvEbonyQstUtil
 ;BEGIN CODE
 ;---| Stage 105 - end
 actor akLover = Alias_aAmorousAdvAlias5.GetReference() as Actor
-;kmyQuest.AnimateAmorousAdvLoveScene2(akLover)
+kmyQuest.AnimateAmorousAdvLoveScene2(akLover)
 SetObjectiveCompleted(100, 1)
 SetStage(200)
 ;END CODE

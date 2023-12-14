@@ -21,7 +21,16 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Sex with Sybille
-    Util.StartNomalScene(PlayerRef, aLover)
+    ; move to Sybille bedroom
+    if(SybilleBedroomMarker)
+        PlayerRef.MoveTo(SybilleBedroomMarker)
+        aLover.MoveTo(SybilleBedroomMarker)
+    else
+        Debug.Trace("AA Sequences: Didn't find SybilleBedroomMarker property")
+    endif
+    
+    ; logically to use vamp bite scene since by plot player gots vampire disease
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_sybille_blue_palace_vamp" ,theme = "vamp")
 
 ;---| END ANIMATION CODE |------
 
@@ -39,5 +48,6 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 
 ;--ACTORS
 Actor Property PlayerRef Auto
+ObjectReference Property SybilleBedroomMarker Auto
 
 AmorousAdvUtil Property Util Auto

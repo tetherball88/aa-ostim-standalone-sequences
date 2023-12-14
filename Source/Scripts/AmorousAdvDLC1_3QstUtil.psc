@@ -11,7 +11,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Serana performing Oral on player. Oral only
-    Util.StartOralScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_serana_volkihar_courtyard_oral", exitOnEnd = true, theme = "oral")
 
 ;---| END ANIMATION CODE |------
 
@@ -28,7 +28,7 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Player finally gets to make love to Serana
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_serana_valericas_laboratory_table", "alchemytable")
 
 ;---| END ANIMATION CODE |------
 

@@ -18,7 +18,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| sex scene with player and Irileth
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_irileth_great_balcony_dragonsearch_regular")
 
 ;---| END ANIMATION CODE |------
 

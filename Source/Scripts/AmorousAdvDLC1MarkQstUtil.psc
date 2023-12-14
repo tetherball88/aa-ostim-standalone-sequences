@@ -18,7 +18,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
 	;--| Player and serana make love
-	Util.StartNomalScene(PlayerRef, aLover)
+	Util.StartUniqueSequence(PlayerRef, aLover, "amor_serana_mark_anywhere_regular")
 
 ;---| END ANIMATION CODE |------
 
@@ -35,7 +35,8 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
 	;--| Player and serana make love
-	Util.StartNomalScene(PlayerRef, aLover)
+	
+	Util.StartUniqueSequence(PlayerRef, aLover, "amor_serana_mark_ansilvund_regular")
 
 ;---| END ANIMATION CODE |------
 
@@ -71,7 +72,7 @@ Function AnimateAmorousAdvLoveScene4 (actor aLover)
 
 	;--| Player gives Ahlam anal
 	;--| This should be an Anal only scene
-	Util.StartAnalScene(PlayerRef, aLover)
+	Util.StartUniqueSequence(PlayerRef, aLover, "amor_ahlam_mark_anywhere_anal", theme = "anal")
 
 ;---| END ANIMATION CODE |------
 
@@ -88,7 +89,10 @@ Function AnimateAmorousAdvLoveScene5 (actor aLover, actor bLover)
 ;---| BEGIN ANIMATION CODE |------
 
 	;--| Scene between Ahlam and Serana - player watches
-	Util.StartNPCScene(aLover, bLover)
+	; aLover - Ahlam
+	; bLover - Serana
+	; usually first actor is dom so place bLover(Serana) before aLover(Ahlam)
+	Util.StartUniqueSequence(bLover, aLover, "amor_serana_ahlam_mark_anywhere_lesbian")
 
 ;---| END ANIMATION CODE |------
 
@@ -105,7 +109,7 @@ Function AnimateAmorousAdvLoveScene6 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
 	;--| Player and Serana make love
-	Util.StartNomalScene(PlayerRef, aLover)
+	Util.StartUniqueSequence(PlayerRef, aLover, "amor_serana_mark_anywhere2_regular")
 
 ;---| END ANIMATION CODE |------
 
@@ -122,7 +126,7 @@ Function AnimateAmorousAdvLoveScene7 (actor aLover, actor bLover)
 ;---| BEGIN ANIMATION CODE |------
 
 	;--| Threesome between Senna, Serana and Player
-	Util.StartThreesomeScene(PlayerRef, aLover, bLover)
+	Util.StartUniqueSequence(PlayerRef, aLover, "amor_serana_senna_mark_temple_of_dibella_threesome_chair", "chair", bLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -139,7 +143,7 @@ Function AnimateAmorousAdvLoveScene8 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
 	;--| player makes love with Serana
-	Util.StartNomalScene(PlayerRef, aLover)
+	Util.StartUniqueSequence(PlayerRef, aLover, "amor_serana_mark_temple_of_dibella_chair", "chair")
 
 ;---| END ANIMATION CODE |------
 
@@ -156,7 +160,7 @@ Function AnimateAmorousAdvLoveScene9 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
 	;--| player makes love with Serana
-	Util.StartNomalScene(PlayerRef, aLover)
+	Util.StartUniqueSequence(PlayerRef, aLover, "amor_serana_mark_anywhere_final_regular")
 
 ;---| END ANIMATION CODE |------
 

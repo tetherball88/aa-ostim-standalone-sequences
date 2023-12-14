@@ -94,8 +94,7 @@ Function AnimateAmorousAdvLoveScene3 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Serana masturbates solo.  Player watches.
-
-    Util.StartMasturbationScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_serana_anywhere_art1_solo", theme = "solo")
 
 ;---| END ANIMATION CODE |------
 
@@ -112,7 +111,7 @@ Function AnimateAmorousAdvLoveScene4 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Serana performing Oral on player
-    Util.StartOralScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_serana_anywhere_art2_oral", exitOnEnd = true, theme = "oral")
 
 ;---| END ANIMATION CODE |------
 
@@ -129,7 +128,7 @@ Function AnimateAmorousAdvLoveScene5 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Serana and player make love
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_serana_anywhere_art3_missionary", theme = "missionary")
 
 ;---| END ANIMATION CODE |------
 
@@ -147,7 +146,7 @@ Function AnimateAmorousAdvLoveScene6 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Should be an anal only scene. Player gives Serana anal sex
-    Util.StartAnalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_serana_anywhere_art4_anal", theme = "anal")
 
 ;---| END ANIMATION CODE |------
 

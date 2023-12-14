@@ -1,28 +1,32 @@
 {
     "scenes": [
         {
-            "id": "AnubsJacko-1",
-            "duration": 11.2
+            "id": "AnubsHold-1",
+            "duration": 8
         },
         {
-            "id": "AnubsJacko-2",
+            "id": "AnubsHold-2",
+            "duration": 8
+        },
+        {
+            "id": "AnubsHold-3",
             "duration": 10
         },
         {
-            "id": "AnubsJacko-3",
-            "duration": 11
+            "id": "AnubsHold-4",
+            "duration": 10
         },
         {
-            "id": "AnubsJacko-4",
-            "duration": 10.4
+            "id": "AnubsHold-5",
+            "duration": 10
         },
         {
-            "id": "AnubsJacko-5",
-            "duration": 10.2
+            "id": "AnubsHold-6",
+            "duration": 10
         },
         {
-            "id": "AnubsJacko-6",
-            "duration": 9.333333
+            "id": "AnubsHold-7",
+            "duration": 8
         }
     ],
     "tags": [

@@ -19,7 +19,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Player and Jonna make love
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_jonna_moorside_inn_wall", "wall")
 
 ;---| END ANIMATION CODE |------
 
@@ -35,7 +35,7 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Idgrod the younger masturbates solo. Player watches.
-    Util.StartMasturbationScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_idgrod_morthal_marshes_solo", theme = "solo")
 
 ;---| END ANIMATION CODE |------
 
@@ -51,7 +51,7 @@ Function AnimateAmorousAdvLoveScene3 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Player and Idgrod The Younger make love
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_idgrod_highmoon_hall_chair", "chair")
 
 ;---| END ANIMATION CODE |------
 

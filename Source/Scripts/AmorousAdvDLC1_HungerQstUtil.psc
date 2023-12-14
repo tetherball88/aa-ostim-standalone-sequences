@@ -44,7 +44,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Player and Serana make love
-	Util.StartNomalScene(PlayerRef, aLover)
+	Util.StartVampireScene(PlayerRef, aLover)
 
 ;---| END ANIMATION CODE |------
 

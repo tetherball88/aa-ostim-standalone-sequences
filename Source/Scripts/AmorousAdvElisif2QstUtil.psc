@@ -54,8 +54,8 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-	;---| Sex with Elisif
-    Util.StartNomalScene(PlayerRef, aLover)
+	;---| Sex with Elisif 
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_elisif_frostflow_lighthouse_regular", theme = "standing")
 
 ;---| END ANIMATION CODE |------
 
@@ -74,8 +74,14 @@ Function AnimateAmorousAdvLoveScene3(actor aLover, actor bLover)
     ;--| Threesome with player
     ;--| aLover = Elisif
     ;--| bLover = Elisif
-    ;--| OSex has no threesome functionality, use Elisif (LOL)
-    Util.StartThreesomeScene(PlayerRef, aLover, bLover)
+    if(ElisifBedroomMarker)
+        PlayerRef.MoveTo(ElisifBedroomMarker)
+        aLover.MoveTo(ElisifBedroomMarker)
+        bLover.MoveTo(ElisifBedroomMarker)
+    else
+        Debug.Trace("AA Sequences: Didn't find ElisifBedroomMarker property")
+    endif
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_elisif_elisif_blue_palace_threesome_bed", "doublebed", actor3 = bLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -91,6 +97,8 @@ Message Property AmorousAdvStoryBoard1 Auto  ;--| AmorousAdvSexMsgElisif2Kiss
 Message Property AmorousAdvStoryBoard2 Auto  ;--| AmorousAdvSexMsgElisif2FF
 Message Property AmorousAdvStoryBoard3 Auto  ;--| AmorousAdvSexMsgElisif2End
 GlobalVariable Property AmorousAdvUseBlackScreens Auto
+
+ObjectReference Property ElisifBedroomMarker Auto
 
 ;--ACTORS
 Actor Property PlayerRef Auto

@@ -339,12 +339,22 @@ actor akNirya = Alias_aAmorousAdvAlias3.GetReference() as Actor
 actor akFaralda = Alias_aAmorousAdvAlias2.GetReference() as Actor
 actor akBrelyna = Alias_aAmorousAdvAlias1.GetReference() as Actor
 
-kmyQuest.AnimateAmorousAdvLoveScene7(akFaralda,akBrelyna)
-Utility.Wait(2.0)
-kmyQuest.AnimateAmorousAdvLoveScene5(akNirya)
-Utility.Wait(5.0)
-AmorousAdvCircleOfSex.cast(akNirya, akNirya)
-AmorousAdvCircleOfSex.cast(akFaralda, akFaralda)
+bool fouresomeHappened = kmyQuest.AnimateAmorousAdvLoveScene8(akFaralda, akNirya, akBrelyna)
+
+if(!fouresomeHappened)
+    kmyQuest.AnimateAmorousAdvLoveScene7(akFaralda,akBrelyna)
+    Utility.Wait(0.5)
+    kmyQuest.AnimateAmorousAdvLoveScene5(akNirya)
+    Utility.Wait(5.0)
+    AmorousAdvCircleOfSex.cast(akNirya, akNirya)
+    AmorousAdvCircleOfSex.cast(akFaralda, akFaralda)
+else
+    Utility.Wait(5.0)
+    AmorousAdvCircleOfSex.cast(akNirya, akNirya)
+endif
+
+
+
 SetObjectiveCompleted(140, 1)
 SetObjectiveDisplayed(150, 1)
 ;END CODE

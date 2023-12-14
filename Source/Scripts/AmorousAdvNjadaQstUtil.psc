@@ -27,7 +27,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| player and Njada make love
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_njada_anywhere_regular")
 
 ;---| END ANIMATION CODE |------
 

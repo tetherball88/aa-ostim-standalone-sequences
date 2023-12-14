@@ -36,7 +36,7 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| player and Jenassa make love
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_jenassa_white_river_watch_regular_table", "tableleanmarker")
 
 ;---| END ANIMATION CODE |------
 
@@ -71,8 +71,7 @@ Function AnimateAmorousAdvLoveScene4 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| player and Jenassa make love
-    Util.StartNomalScene(PlayerRef, aLover)
-
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_jenassa_east_empire_company_regular_bed", "bed")
 ;---| END ANIMATION CODE |------
 
 EndFunction
@@ -91,7 +90,7 @@ Function AnimateAmorousAdvLoveScene5 (actor aLover, actor bLover)
     ;--| aLover = Jenassa
     ;--| bLover = Adelaisa
     ;--| Use Jenassa for OSex
-    Util.StartThreesomeScene(PlayerRef, aLover, bLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_jenassa_adelaisa_east_empire_company_threesome_bed", "bed", bLover)
 
 ;---| END ANIMATION CODE |------
 

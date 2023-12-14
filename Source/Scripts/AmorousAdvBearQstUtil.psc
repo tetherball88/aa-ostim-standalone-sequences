@@ -21,7 +21,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Banging Temba behind Ivarstead Inn
-    Util.StartNomalScene(PlayerRef, aLover);LATER
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_temba_behind_vilemyr_inn_regular")
 
 ;---| END ANIMATION CODE |------
 
@@ -78,7 +78,7 @@ Function AnimateAmorousAdvLoveScene4 (actor aLover, actor bLover)
     ;--| aLover = Lynly
     ;--| bLover = Ria
     ;--| OSex has no threesome functionality, use Lynly
-    Util.StartThreesomeScene(PlayerRef, aLover, bLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_ria_lynly_shroud_hearth_barrow_threesome", actor3 = bLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -96,7 +96,7 @@ Function AnimateAmorousAdvLoveScene5 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Final scene - make love with Ria
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_ria_shroud_hearth_barrow_regular")
 
 ;---| END ANIMATION CODE |------
 

@@ -19,7 +19,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Player has sex with Valerica
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_valerica_soule_cairn_regular")
 
 ;---| END ANIMATION CODE |------
 

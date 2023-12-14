@@ -21,7 +21,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Player and Borgakh love scene
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_borgakh_malacaths_shrine_regular")
 
 ;---| END ANIMATION CODE |------
 

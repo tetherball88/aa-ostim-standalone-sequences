@@ -20,7 +20,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Danica and Player sex scene
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_danica_temple_of_kynareth_regular_bed", "bed")
 
 ;---| END ANIMATION CODE |------
 

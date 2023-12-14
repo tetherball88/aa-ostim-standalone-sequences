@@ -20,7 +20,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| love scene with Annekke in Temple of Dibella
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_annekke_temple_of_dibella_chair", "chair")
 
 ;---| END ANIMATION CODE |------
 

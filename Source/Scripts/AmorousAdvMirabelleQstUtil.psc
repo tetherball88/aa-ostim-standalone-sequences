@@ -16,7 +16,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Sex "research" with Mirabelle
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_mirabelle_hall_of_attainment_1st_research_regular_bed", "bed")
 
 ;---| END ANIMATION CODE |------
 
@@ -34,7 +34,7 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| More Sex "research" with Mirabelle
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_mirabelle_hall_of_attainment_2nd_research_regular_bed", "bed")
 
 ;---| END ANIMATION CODE |------
 

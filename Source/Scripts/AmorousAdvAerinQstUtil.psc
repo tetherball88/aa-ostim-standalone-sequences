@@ -52,7 +52,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| A love scene
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_illia_darklight_tower_outside_regular")
 
 ;---| END ANIMATION CODE |------
 
@@ -70,7 +70,7 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| A love scene
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_mjoll_aerins_house_regular_bed", "bed")
 
 ;---| END ANIMATION CODE |------
 
@@ -88,7 +88,7 @@ Function AnimateAmorousAdvLoveScene3 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| A love scene
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_sapphire_aerins_house_regular_bed", "bed")
 
 ;---| END ANIMATION CODE |------
 
@@ -106,7 +106,7 @@ Function AnimateAmorousAdvLoveScene4 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| A love scene
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_ingun_aerins_house_regular_bed", "bed")
 
 ;---| END ANIMATION CODE |------
 
@@ -122,6 +122,14 @@ Function SpawnSomeHags(actor aActor)
 	SpawnedFrostHag = aActor.Placeactoratme(FrostHag)
 	SpawnedFireHag = aActor.Placeactoratme(FireHag)
 
+EndFunction
+
+Function TeleportNpcToAerinsHouse(Actor npc) 
+    if(AmorAerinHouseMarker)
+        npc.MoveTo(AmorAerinHouseMarker)
+    else
+        Debug.Trace("AA Sequences: Didn't find AmorAerinHouseMarker property")
+    endif
 EndFunction
 
  
@@ -147,3 +155,4 @@ Actorbase Property FrostHag Auto
 Actor Property PlayerRef Auto
 
 AmorousAdvUtil Property Util Auto
+ObjectReference Property AmorAerinHouseMarker Auto

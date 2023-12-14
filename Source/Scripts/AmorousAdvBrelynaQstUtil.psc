@@ -57,7 +57,7 @@ Function AnimateAmorousAdvLoveScene3 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Player and Brelyna make love
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_brelyna_volkuns_throne_room_regular")
 
 ;---| END ANIMATION CODE |------
 
@@ -74,8 +74,8 @@ Function AnimateAmorousAdvLoveScene4 (actor aLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| Player and Brelyna make love
-    Util.StartNomalScene(PlayerRef, aLover)
+    ;--| Player and Brelyna make love 
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_brelyna_volskygge_regular")
 
 ;---| END ANIMATION CODE |------
 
@@ -93,7 +93,7 @@ Function AnimateAmorousAdvLoveScene5 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Player and Nirya make love
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_nirya_arch_mages_quarters_regular")
 
 ;---| END ANIMATION CODE |------
 
@@ -127,8 +127,35 @@ Function AnimateAmorousAdvLoveScene7 (actor aLover, actor bLover)
 
     ;--| This is a scene with Faralda and Breylana having sex
     ;--| In SexLab this happens simultaneous with the Nirya + Player scene 
-    ;--| OSex doesn't handle a scene with two NPC's making love
-    Util.StartNPCScene(aLover, bLover)
+    Util.StartUniqueSequence(aLover, bLover, "amor_brelyna_faralda_arch_mages_quarters_lesbian")
+
+;---| END ANIMATION CODE |------
+
+EndFunction
+
+bool Function AnimateAmorousAdvLoveScene8 (actor actor1, actor actor2, actor actor3)
+
+	Debug.Trace("Amorous Adventures: AnimateMyLover: Player, Brelyna, Nirya and Faralda foursome")
+	If(AmorousAdvUseBlackScreens.GetValue() == 1)
+        AmorousAdvStoryBoard6.Show()
+    EndIf
+
+;---| BEGIN ANIMATION CODE |------
+
+    ;--| This is a scene with Player, Nirya, Faralda and Breylana having sex
+    ;--| This happens instead of AnimateAmorousAdvLoveScene5 + AnimateAmorousAdvLoveScene7
+    Actor[] actors = OActorUtil.ToArray(PlayerRef, actor1, actor2, actor3)
+    string fouresomeSeq = OSequence.GetRandomSequenceWithAllSequenceTagsCSV(actors, "amor_brelyna_nirya_faralda_arch_mages_quarters_foursome_bed")
+
+    if(fouresomeSeq == "")
+        return false
+    endif
+
+    ObjectReference furn = Util.FindFurnitureByType(actors.Length, "doublebed")
+
+    Util.StartOstimSequence(actors, fouresomeSeq, false, furn)
+
+    return true
 
 ;---| END ANIMATION CODE |------
 

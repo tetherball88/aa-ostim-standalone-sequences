@@ -160,10 +160,17 @@ AmorousAdvSteelQstUtil kmyQuest = __temp as AmorousAdvSteelQstUtil
 actor lydia = Alias_aAmorousAdvAlias1.GetReference() as Actor
 actor akLover = Alias_aAmorousAdvAlias2.GetReference() as Actor
 
-PlayerRef.Moveto(Marker)
-lydia.MoveTo(Marker)
-akLover.MoveTo(Marker)
-Utility.wait(3)
+if(AmorLydiaAdrianneMarker)
+    PlayerRef.Moveto(AmorLydiaAdrianneMarker)
+    lydia.MoveTo(AmorLydiaAdrianneMarker)
+    akLover.MoveTo(AmorLydiaAdrianneMarker)
+else
+    Debug.Trace("AA Sequences: Didn't find AmorLydiaAdrianneMarker property")
+    PlayerRef.Moveto(Marker)
+    lydia.MoveTo(Marker)
+    akLover.MoveTo(Marker)
+endif
+Utility.wait(2)
 kmyQuest.AnimateAmorousAdvLoveScene3(akLover, lydia)
 
 SetStage(200)
@@ -261,3 +268,4 @@ Armor Property ArmorEbonyShield Auto
 MiscObject Property Gold001 Auto
 Actor Property PlayerRef Auto
 ObjectReference Property Marker  Auto
+ObjectReference Property AmorLydiaAdrianneMarker Auto

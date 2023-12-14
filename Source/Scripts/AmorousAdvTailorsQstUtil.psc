@@ -20,7 +20,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Sex scene with Endarie. a 69 in SexLab
-    Util.StartOral69Scene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_endarie_radiant_raiment_69_bed", "bed", theme = "69")
 
 ;---| END ANIMATION CODE |------
 
@@ -40,8 +40,8 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover, actor bLover)
     ;--| A Threesome! - OSex doesn't handle threesomes
     ;--| aLover = Jordis
     ;--| bLover = Lydia
-    ;--| ... Skip for OSex
-    Util.StartThreesomeScene(PlayerRef, aLover, bLover)
+    ;--| ... Skip for OSex 
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_lydia_jordis_anywhere_threesome", actor3 = bLover)
 
 ;---| END ANIMATION CODE |------
 
@@ -59,7 +59,7 @@ Function AnimateAmorousAdvLoveScene3 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Player and Jordis make love
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_jordis_anywhere_regular")
 
 ;---| END ANIMATION CODE |------
 
@@ -76,11 +76,10 @@ Function AnimateAmorousAdvLoveScene4 (actor aLover, actor bLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| A Threesome! - OSex doesn't handle threesomes
+    ;--| A Threesome!
     ;--| aLover = Jordis
     ;--| bLover = Endarie
-    ;--| Use Endarie for OSex
-    Util.StartThreesomeScene(PlayerRef, aLover, bLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_jordis_endarie_radiant_raiment_threesome_bed", "bed", bLover)
 
 ;---| END ANIMATION CODE |------
 

@@ -324,8 +324,15 @@ Function AnimateMyLover(actor aLover, int sexType)
 	EndIf
 
 ;---| BEGIN ANIMATION CODE |------
-
-	Util.StartNomalScene(PlayerRef, aLover)
+	If (sexType == 1)
+		Util.StartMissionaryScene(PlayerRef, aLover)
+	ElseIf (sexType == 2)
+		Util.StartAnalScene(PlayerRef, aLover)
+	ElseIf (sexType == 0)
+		Util.StartOralScene(PlayerRef, aLover)
+	Else
+		Util.StartNomalScene(PlayerRef, aLover)
+	EndIf
 
 ;---| END ANIMATION CODE |------
 

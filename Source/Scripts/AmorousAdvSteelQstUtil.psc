@@ -36,21 +36,22 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| player and Lydia make love
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_lydia_anywhere_regular")
 
 ;---| END ANIMATION CODE |------
 
 EndFunction
 
-Function AnimateAmorousAdvLoveScene3 (actor aLover, actor bLover)
+Function AnimateAmorousAdvLoveScene3 (actor adrianne, actor lydia)
 
 ;---| BEGIN ANIMATION CODE |------
     Debug.Trace("Amorous Adventures: AnimateMyLover: Adrianne and Lydia ")
-    ;--- No Fade
-    ;--- No Message
+    If(AmorousAdvUseBlackScreens.GetValue() == 1 && AmorousAdvStoryBoard3)
+        AmorousAdvStoryBoard3.Show()
+    EndIf
 
     ;--| Adrianne and Lydia make love
-    Util.StartThreesomeScene(PlayerRef, aLover, bLover)
+    Util.StartUniqueSequence(PlayerRef, lydia, "amor_lydia_adrianne_bannered_mare_threesome_bed", "bed", actor3 = adrianne)
 
 ;---| END ANIMATION CODE |------
 
@@ -62,6 +63,7 @@ Faction Property AmorAdvLoverFaction Auto
 ;--FADE TO BLACK STORYBOARDS
 Message Property AmorousAdvStoryBoard1 Auto  ;--| AmorousAdvSexMsgLydiaKiss1
 Message Property AmorousAdvStoryBoard2 Auto  ;--| AmorousAdvSexMsgLydiaUnclothed
+Message Property AmorousAdvStoryBoard3 Auto  ;--| AmorAdvSexMsgAdrianneLeadingLydiaAndYouToTheInn
 GlobalVariable Property AmorousAdvUseBlackScreens Auto
 
 ;--ACTORS

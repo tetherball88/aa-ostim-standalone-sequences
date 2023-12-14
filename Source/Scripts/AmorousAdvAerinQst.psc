@@ -126,10 +126,15 @@ EndFunction
 Function Fragment_24()
 ;BEGIN CODE
 ;Stage 80
+Quest __temp = self as Quest
+AmorousAdvAerinQstUtil kmyQuest = __temp as AmorousAdvAerinQstUtil
 SetObjectiveCompleted(75, 1)
 SetObjectiveDisplayed(80, 1)
 actor akMjoll = Alias_aAmorousAdvAlias2.GetReference() as Actor
 akMjoll.EvaluatePackage()
+; she walks to slow. I need to be sure she is in the house with beds
+Utility.Wait(4)
+kmyQuest.TeleportNpcToAerinsHouse(akMjoll)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -312,7 +317,11 @@ AmorousAdvAerinQstUtil kmyQuest = __temp as AmorousAdvAerinQstUtil
 ;BEGIN CODE
 ;Stage 95
 actor akSapphire = Alias_aAmorousAdvAlias4.GetReference() as Actor
+actor akIngun = Alias_aAmorousAdvAlias3.GetReference() as Actor
 kmyQuest.AnimateAmorousAdvLoveScene3(akSapphire)
+; she walks to slow. I need to be sure she is in the house with beds
+Utility.Wait(4)
+kmyQuest.TeleportNpcToAerinsHouse(akIngun)
 SetObjectiveCompleted(90, 1)
 SetObjectiveDisplayed(95, 1)
 ;END CODE
@@ -399,7 +408,11 @@ AmorousAdvAerinQstUtil kmyQuest = __temp as AmorousAdvAerinQstUtil
 ;BEGIN CODE
 ;Stage 85
 actor akMjoll = Alias_aAmorousAdvAlias2.GetReference() as Actor
+actor akSapphire = Alias_aAmorousAdvAlias4.GetReference() as Actor
 kmyQuest.AnimateAmorousAdvLoveScene2(akMjoll)
+; she walks to slow. I need to be sure she is in the house with beds
+Utility.Wait(4)
+kmyQuest.TeleportNpcToAerinsHouse(akSapphire)
 SetObjectiveCompleted(80, 1)
 SetObjectiveDisplayed(85, 1)
 ;END CODE

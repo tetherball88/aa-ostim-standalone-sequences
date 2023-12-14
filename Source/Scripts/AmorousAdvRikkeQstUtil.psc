@@ -41,7 +41,7 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Player and Rikke make love
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_rikke_anywhere_regular")
 
 	
 ;---| END ANIMATION CODE |------

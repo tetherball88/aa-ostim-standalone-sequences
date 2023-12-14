@@ -19,7 +19,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Make love with Ysolda
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_ysolda_ysoldas_house_regular_bed", "bed")
 
 ;---| END ANIMATION CODE |------
 

@@ -22,8 +22,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover, actor bLover)
     ;--| aLover = Annekke
     ;--| bLover = Sylgja
     ;--| OSex doesn't handle threesomes
-    Util.StartThreesomeScene(PlayerRef, aLover, bLover)
-
+    Util.StartUniqueSequence(PlayerRef, bLover, "amor_sylgja_annekke_sylgjas_house_threesome_doublebed", "doublebed", aLover)
 ;---| END ANIMATION CODE |------
 
 EndFunction

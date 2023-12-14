@@ -73,7 +73,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| sex scene with Illdi the virgin
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_illdi_bards_college_regular_bed", "bed", theme = "missionary")
 
 ;---| END ANIMATION CODE |------
 
@@ -90,7 +90,7 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Make love with Lisette
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_lisette_the_winking_skeever_regular_bed", "bed", theme = "missionary")
 
 ;---| END ANIMATION CODE |------
 

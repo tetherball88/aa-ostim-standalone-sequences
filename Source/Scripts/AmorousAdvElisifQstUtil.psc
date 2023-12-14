@@ -18,6 +18,12 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
+    if(AmorousAdvWhiteWeddingDressSticky)
+        ; wear wedding dress version which can't be removed by OStim (keyword OStimNoStrip)
+        aLover.AddItem(AmorousAdvWhiteWeddingDressSticky, abSilent = true)
+        Utility.Wait(0.2)
+        aLover.EquipItem(AmorousAdvWhiteWeddingDressSticky)
+    endif
     ;--| This is a special scene. 
     ;--|  In SexLab player is naked while Elisif wears a wedding dress
     ;--| Elisif in dress rides player cowgirl
@@ -35,10 +41,18 @@ Function AnimateAmorousAdvLoveScene2 (actor aLover)
         AmorousAdvStoryBoard2.Show()
     EndIf
 
+    if(AmorousAdvWhiteWeddingDress && AmorousAdvWhiteWeddingDressSticky)
+        ; remove sticky version of wedding dress allowing it to strip
+        Utility.Wait(0.2)
+        aLover.EquipItem(AmorousAdvWhiteWeddingDress)
+        Utility.Wait(0.2)
+        aLover.RemoveItem(AmorousAdvWhiteWeddingDressSticky, abSilent = true)
+    endif    
+
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| elisif and player make love
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_elisif_temple_of_the_divines_after_wedding_regular_bed", "bed")
 
 ;---| END ANIMATION CODE |------
 
@@ -54,6 +68,9 @@ GlobalVariable Property AmorousAdvUseBlackScreens Auto
 
 ;--ACTORS
 Actor Property PlayerRef Auto
+
+Armor Property AmorousAdvWhiteWeddingDressSticky Auto
+Armor Property AmorousAdvWhiteWeddingDress Auto
 
 ObjectReference Property AmorousAdvSexElisifBed Auto
 

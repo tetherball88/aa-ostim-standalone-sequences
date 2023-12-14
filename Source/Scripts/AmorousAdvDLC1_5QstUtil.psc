@@ -11,8 +11,8 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 
 ;---| BEGIN ANIMATION CODE |------
 
-    ;--| Player makes love to Serana
-    Util.StartNomalScene(PlayerRef, aLover)
+    ;--| Player makes love to Serana 
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_serana_ancestors_glade_regular")
 
 ;---| END ANIMATION CODE |------
 

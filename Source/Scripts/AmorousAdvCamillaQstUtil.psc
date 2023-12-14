@@ -19,7 +19,7 @@ Function AnimateAmorousAdvLoveScene1 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Camilla gives the player oral
-    Util.StartOralScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_camilla_riverwood_bridge_oral", exitOnEnd = true, theme = "oral")
 
 ;---| END ANIMATION CODE |------
 
@@ -53,7 +53,7 @@ Function AnimateAmorousAdvLoveScene3 (actor aLover)
 ;---| BEGIN ANIMATION CODE |------
 
     ;--| Player makes love with Camilla
-    Util.StartNomalScene(PlayerRef, aLover)
+    Util.StartUniqueSequence(PlayerRef, aLover, "amor_camilla_riverwood_trader_regular_bed", "singlebed")
 
 ;---| END ANIMATION CODE |------
 
