@@ -1,0 +1,35 @@
+{
+    "scenes": [
+        {
+            "id": "AnubsRune-3",
+            "duration": 10
+        },
+        {
+            "id": "AnubsRune-4",
+            "duration": 10
+        },
+        {
+            "id": "AnubsRune-5",
+            "duration": 10
+        },
+        {
+            "id": "AnubsRune-6",
+            "duration": 10
+        },
+        {
+            "id": "AnubsRune-7",
+            "duration": 10
+        },
+        {
+            "id": "AnubsRune-8",
+            "duration": 10
+        },
+        {
+            "id": "AnubsRune-9",
+            "duration": 5
+        }
+    ],
+    "tags": [
+        "amor_mirabelle_hall_of_attainment_2nd_research_regular_bed"
+    ]
+}

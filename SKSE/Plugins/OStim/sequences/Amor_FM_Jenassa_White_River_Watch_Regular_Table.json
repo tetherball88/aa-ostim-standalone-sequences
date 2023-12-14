@@ -1,0 +1,35 @@
+{
+    "scenes": [
+        {
+            "id": "AnubsAInvTable-1",
+            "duration": 9.333333
+        },
+        {
+            "id": "AnubsAInvTable-2",
+            "duration": 10.4
+        },
+        {
+            "id": "AnubsAInvTable-3",
+            "duration": 11.4
+        },
+        {
+            "id": "AnubsAInvTable-4",
+            "duration": 11.2
+        },
+        {
+            "id": "AnubsAInvTable-5",
+            "duration": 10.4
+        },
+        {
+            "id": "AnubsAInvTable-6",
+            "duration": 10.4
+        },
+        {
+            "id": "AnubsAInvTable-7",
+            "duration": 9.333333
+        }
+    ],
+    "tags": [
+        "amor_jenassa_white_river_watch_regular_table"
+    ]
+}

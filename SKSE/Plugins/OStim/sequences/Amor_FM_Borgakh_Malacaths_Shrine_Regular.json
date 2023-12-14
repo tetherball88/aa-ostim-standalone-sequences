@@ -1,0 +1,27 @@
+{
+    "scenes": [
+        {
+            "id": "BillyyStand-1",
+            "duration": 10
+        },
+        {
+            "id": "BillyyStand-2",
+            "duration": 10
+        },
+        {
+            "id": "BillyyStand-3",
+            "duration": 10
+        },
+        {
+            "id": "BillyyStand-4",
+            "duration": 10
+        },
+        {
+            "id": "BillyyStand-5",
+            "duration": 8.333333
+        }
+    ],
+    "tags": [
+        "amor_borgakh_malacaths_shrine_regular"
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "scenes": [
+        {
+            "id": "AnubsSinner-1",
+            "duration": 10
+        },
+        {
+            "id": "AnubsSinner-2",
+            "duration": 12
+        },
+        {
+            "id": "AnubsSinner-3",
+            "duration": 10
+        },
+        {
+            "id": "AnubsSinner-4",
+            "duration": 10.2
+        },
+        {
+            "id": "AnubsSinner-5",
+            "duration": 10
+        },
+        {
+            "id": "AnubsSinner-6",
+            "duration": 12
+        }
+    ],
+    "tags": [
+        "amor_jordis_anywhere_regular"
+    ]
+}

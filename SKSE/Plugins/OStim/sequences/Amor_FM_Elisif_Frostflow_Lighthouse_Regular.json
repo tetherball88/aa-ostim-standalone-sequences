@@ -1,0 +1,27 @@
+{
+    "scenes": [
+        {
+            "id": "BillyyCrabmiss-1",
+            "duration": 10
+        },
+        {
+            "id": "BillyyCrabmiss-2",
+            "duration": 10
+        },
+        {
+            "id": "BillyyCrabmiss-3",
+            "duration": 10
+        },
+        {
+            "id": "BillyyCrabmiss-4",
+            "duration": 10
+        },
+        {
+            "id": "BillyyCrabmiss-5",
+            "duration": 8.333333
+        }
+    ],
+    "tags": [
+        "amor_elisif_frostflow_lighthouse_regular"
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "scenes": [
+        {
+            "id": "BillyyHold-1",
+            "duration": 10
+        },
+        {
+            "id": "BillyyHold-2",
+            "duration": 10
+        },
+        {
+            "id": "BillyyHold-3",
+            "duration": 10
+        },
+        {
+            "id": "BillyyHold-4",
+            "duration": 10
+        },
+        {
+            "id": "BillyyHold-5",
+            "duration": 8.333333
+        }
+    ],
+    "tags": [
+        "amor_lydia_anywhere_regular"
+    ]
+}

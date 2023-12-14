@@ -1,0 +1,27 @@
+{
+    "scenes": [
+        {
+            "id": "BillyyStanda-1",
+            "duration": 10
+        },
+        {
+            "id": "BillyyStanda-2",
+            "duration": 10
+        },
+        {
+            "id": "BillyyStanda-3",
+            "duration": 10
+        },
+        {
+            "id": "BillyyStanda-4",
+            "duration": 10
+        },
+        {
+            "id": "BillyyStanda-5",
+            "duration": 8.333333
+        }
+    ],
+    "tags": [
+        "amor_aranea_shrine_of_azura_regular"
+    ]
+}

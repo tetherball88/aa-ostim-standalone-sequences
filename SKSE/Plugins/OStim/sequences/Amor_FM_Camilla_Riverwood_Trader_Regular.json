@@ -1,0 +1,27 @@
+{
+    "scenes": [
+        {
+            "id": "BillyyLotussit-1",
+            "duration": 8
+        },
+        {
+            "id": "BillyyLotussit-2",
+            "duration": 10
+        },
+        {
+            "id": "BillyyLotussit-3",
+            "duration": 10
+        },
+        {
+            "id": "BillyyLotussit-4",
+            "duration": 10
+        },
+        {
+            "id": "BillyyLotussit-5",
+            "duration": 8.333333
+        }
+    ],
+    "tags": [
+        "amor_camilla_riverwood_trader_regular_bed"
+    ]
+}

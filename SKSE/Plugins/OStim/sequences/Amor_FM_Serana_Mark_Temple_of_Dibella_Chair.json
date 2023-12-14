@@ -1,0 +1,31 @@
+{
+    "scenes": [
+        {
+            "id": "AnubsAfChairDoggy-1",
+            "duration": 10
+        },
+        {
+            "id": "AnubsAfChairDoggy-2",
+            "duration": 6.666667
+        },
+        {
+            "id": "AnubsAfChairDoggy-3",
+            "duration": 8.8
+        },
+        {
+            "id": "AnubsAfChairDoggy-4",
+            "duration": 8.666667
+        },
+        {
+            "id": "AnubsAfChairDoggy-5",
+            "duration": 5.666667
+        },
+        {
+            "id": "AnubsAfChairDoggy-6",
+            "duration": 8.666667
+        }
+    ],
+    "tags": [
+        "amor_serana_mark_temple_of_dibella_chair"
+    ]
+}

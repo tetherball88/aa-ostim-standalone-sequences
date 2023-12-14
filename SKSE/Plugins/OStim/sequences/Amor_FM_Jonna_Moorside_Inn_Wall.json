@@ -1,0 +1,31 @@
+{
+    "scenes": [
+        {
+            "id": "AnubsWallfront-1",
+            "duration": 10
+        },
+        {
+            "id": "AnubsWallfront-2",
+            "duration": 10
+        },
+        {
+            "id": "AnubsWallfront-3",
+            "duration": 10
+        },
+        {
+            "id": "AnubsWallfront-4",
+            "duration": 10
+        },
+        {
+            "id": "AnubsWallfront-5",
+            "duration": 10
+        },
+        {
+            "id": "AnubsWallfront-6",
+            "duration": 4.633333
+        }
+    ],
+    "tags": [
+        "amor_jonna_moorside_inn_wall"
+    ]
+}

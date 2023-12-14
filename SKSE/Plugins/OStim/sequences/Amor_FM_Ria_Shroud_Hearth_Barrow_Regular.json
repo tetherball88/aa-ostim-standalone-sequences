@@ -1,0 +1,27 @@
+{
+    "scenes": [
+        {
+            "id": "LeitoLotus-1",
+            "duration": 10
+        },
+        {
+            "id": "LeitoLotus-2",
+            "duration": 10
+        },
+        {
+            "id": "LeitoLotus-3",
+            "duration": 10
+        },
+        {
+            "id": "LeitoLotus-4",
+            "duration": 10
+        },
+        {
+            "id": "LeitoLotus-5",
+            "duration": 1.666667
+        }
+    ],
+    "tags": [
+        "amor_ria_shroud_hearth_barrow_regular"
+    ]
+}
