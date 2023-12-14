@@ -1,2 +1,0 @@
-Scriptname AmorousAdvOarQstUtil extends Quest
-
