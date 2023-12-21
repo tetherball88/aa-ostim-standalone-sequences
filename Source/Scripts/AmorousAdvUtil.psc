@@ -31,19 +31,18 @@ Function StartNomalScene(Actor dom, Actor sub)
 
     Utility.Wait(0.2)
     Actor[] actors = OActorUtil.ToArray(dom, sub)
-    string animation = OLibrary.GetRandomSceneSuperloadCSV(actors, AnyActionType = "vaginalsex")
 
-    StartOstimScene(actors, animation)
+    StartOstimScene(actors)
 EndFunction
 
-Function StartOralScene(Actor dom, Actor sub)
+Function StartOralScene(Actor dom, Actor sub, bool skipSequence = false)
 
     Utility.Wait(0.2)
 
     Actor[] actors = OActorUtil.ToArray(dom, sub)
 
     ; prefer sequence which will exit right after playing sequence
-    if(StartOralSeq(actors))
+    if(!skipSequence && StartOralSeq(actors))
         return
     endif
     

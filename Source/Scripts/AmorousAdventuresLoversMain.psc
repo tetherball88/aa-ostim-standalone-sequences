@@ -329,7 +329,7 @@ Function AnimateMyLover(actor aLover, int sexType)
 	ElseIf (sexType == 2)
 		Util.StartAnalScene(PlayerRef, aLover)
 	ElseIf (sexType == 0)
-		Util.StartOralScene(PlayerRef, aLover)
+		Util.StartOralScene(PlayerRef, aLover, true)
 	Else
 		Util.StartNomalScene(PlayerRef, aLover)
 	EndIf
